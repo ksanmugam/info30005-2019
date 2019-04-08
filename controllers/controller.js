@@ -5,7 +5,8 @@ var createUser = function(req, res) {
         "name": req.body.name,
         "address": req.body.address,
         "phone": req.body.phone,
-        "rating": req.body.rating
+        "rating": req.body.rating,
+        "cuisine": req.body.cuisine
     };
 
     users.push(newUser);
