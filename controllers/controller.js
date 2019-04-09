@@ -3,6 +3,7 @@ var users= [];
 var createUser = function(req, res) {
     var newUser = {
         "name": req.body.name,
+        "email": req.body.email,
         "address": req.body.address,
         "phone": req.body.phone,
         "rating": req.body.rating,
