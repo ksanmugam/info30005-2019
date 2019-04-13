@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var routes = require('./routes/routes.js');
 app.use('/', routes);
 
-app.listen(3000, function(req, res) {
+app.listen(PORT, function(req, res) {
     console.log(`Express listening on port ${PORT}`);
 });
 
