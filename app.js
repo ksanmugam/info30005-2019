@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var http = require ('http');
-var fs = require ('fs');
 
 const PORT = process.env.PORT || 3000;
 
@@ -15,3 +14,5 @@ app.use('/', routes);
 app.listen(3000, function(req, res) {
     console.log(`Express listening on port ${PORT}`);
 });
+
+module.exports =     app;
