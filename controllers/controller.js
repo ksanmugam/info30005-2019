@@ -1,4 +1,37 @@
-var users= [];
+var users= [
+	 {
+		 "name":"Matthew Psy",
+		 "email":"sy1@student.unimelb.edu.au",
+		 "address":"CBD",
+		 "phone":"0123456789",
+		 "rating":"5.0",
+		 "cuisine":"Phillipines"
+	 },
+	 {
+		 "name":"Kirentheren Sanmugam",
+		 "email":"ksanmugam@student.unimelb.edu.au",
+		 "address":"Coburg",
+		 "phone":"0454545454",
+		 "rating":"4.4",
+		 "cuisine":"Indian"
+	 },
+	 {
+		 "name":"Kevin Ngoh",
+		 "email":"kngoh1@student.unimelb.edu.au",
+		 "address":"CBD",
+		 "phone":"0456789876",
+		 "rating":"3.0",
+		 "cuisine":"Chinese"
+	 },
+	 {
+		 "name":"Cameron Wilson",
+		 "email":"cwilson4@student.unimelb.edu.au",
+		 "address":"Suburb",
+		 "phone":"0444444444",
+		 "rating":"4.5",
+		 "cuisine":"European"
+	 },
+	 ];
 
 var createUser = function(req, res) {
     var newUser = {
