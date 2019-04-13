@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var http = require ('http');
+const port=process.env.PORT || 3000
 var fs = require ('fs');
 
 app.use(bodyParser.json());
