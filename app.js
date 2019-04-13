@@ -14,8 +14,3 @@ app.use('/', routes);
 app.listen(PORT, function(req, res) {
     console.log(`Express listening on port ${PORT}`);
 });
-<<<<<<< HEAD
-=======
-
-module.exports = app;
->>>>>>> 6076c3d788c5e7798b85bd869348c919d05a8122
