@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var http = require ('http');
-const port=process.env.PORT || 3000
 var fs = require ('fs');
 
 app.use(bodyParser.json());
@@ -22,5 +21,10 @@ var server = http.createServer(function(req,res) {
     myReadStream.pipe(res);
 });
 
-server.listen(3000, '127.0.0.1');
-console.log ('yo guess what, we listening on port 3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, function() { 
+	console.log(`Express listening on port ${PORT}`);
+});
+
+// server.listen(3000, '127.0.0.1');
+// console.log ('yo guess what, we listening on port 3000');
