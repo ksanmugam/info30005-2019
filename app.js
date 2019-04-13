@@ -13,3 +13,5 @@ app.use('/', routes);
 app.listen(3000, function(req, res) {
     console.log(`Express listening on port ${PORT}`);
 });
+
+module.exports = app;
