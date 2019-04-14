@@ -56,14 +56,12 @@ var findByFoodName = function(req, res) {
 
 var findByIngredient = function(req, res) {
     for (var i = 0; i < distributors.length; i++) {
-        for (var k = 0; k < (distributors[i].ingredients).length; k++) {
-            if (distributors[i].ingredients[k] == req.params.ingredients) {
-                res.send(distributors[i]);
-                break;
-            }
+        if((distributors[i].ingredients).includes(req.params.ingredients)) {
+            res.send(distributors[i]);
         }
     }
 }
+
 
 module.exports.createDistributor = createDistributor;
 module.exports.findAllDistributors = findAllDistributors;

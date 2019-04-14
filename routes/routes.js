@@ -32,7 +32,7 @@ router.get('/api/distributors/food_name/:food_name', distributorController.findB
 router.get('/api/distributors/cuisine/:cuisine', distributorController.findByCuisine);
 
 // Fine distributors by ingredient
-router.get('/api/distributors/ingredient/:ingredient', distributorController.findByIngredient);
+router.get('/api/distributors/ingredients/:ingredients', distributorController.findByIngredient);
 
 
 module.exports = router;
