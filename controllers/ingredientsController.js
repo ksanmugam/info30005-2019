@@ -14,7 +14,7 @@ var ingredients= [
     }
 ];
 
-
+// create ingredient format
 var ingredient = function(req, res) {
     var newFoodLookUp = {
         "food_name": req.body.food_name,
@@ -28,10 +28,12 @@ var ingredient = function(req, res) {
 
 };
 
+// find ingredients and return all
 var findAllIngredients = function(req,res) {
     res.send(ingredients);
 };
 
+// find specific cuisine and returns info
 var findByCuisine = function(req, res) {
     for (var i = 0; i < ingredients.length; i++) {
         if (ingredients[i].cuisine == req.params.cuisine) {
@@ -39,9 +41,6 @@ var findByCuisine = function(req, res) {
         }
     }
 };
-
-
-//Export Modules
 
 module.exports.ingredient = ingredient;
 module.exports.findAllIngredients = findAllIngredients;
