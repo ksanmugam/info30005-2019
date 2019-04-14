@@ -33,11 +33,12 @@ var createDistributor = function(req, res) {
 
 };
 
+//returns all distributors
 var findAllDistributors = function(req, res) {
     res.send(distributors);
 };
 
-
+//returns distributor with specified cuisine
 var findByCuisine = function(req, res) {
     for (var i = 0; i < distributors.length; i++) {
         if (distributors[i].cuisine == req.params.cuisine) {
@@ -46,6 +47,7 @@ var findByCuisine = function(req, res) {
     }
 };
 
+//returns distributor with specific food on offer
 var findByFoodName = function(req, res) {
     for (var i = 0; i < distributors.length; i++) {
         if (distributors[i].food_name == req.params.food_name) {
@@ -54,6 +56,7 @@ var findByFoodName = function(req, res) {
     }
 };
 
+//returns all ditributors whose food contains the specified ingredient
 var findByIngredient = function(req, res) {
     for (var i = 0; i < distributors.length; i++) {
         if((distributors[i].ingredients).includes(req.params.ingredients)) {
