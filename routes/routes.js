@@ -38,13 +38,10 @@ router.get('/api/distributors/ingredient/:ingredient', distributorController.fin
 
 
 // Find all ingredients
-router.get('/api/ingredients', ingredientsControllerController.findAllIngredients);
-
+router.get('/api/ingredients', ingredientsController.findAllIngredients);
 
 // Find Ingredients by cuisine
 router.get('/api/ingredients/cuisine/:cuisine', ingredientsController.findByCuisine);
-
-
 
 
 module.exports = router;
