@@ -4,7 +4,7 @@ var distributors= [
         "address": "87 Franklin St",
         "phone": "0432501567",
         "rating": "5",
-        "cuisine": "Asian",
+        "cuisine": "Italian",
         "food_name": ["Pasta", "Macaroni", "Pizza"],
         "ingredients": ["Cheese", "Bread", "Noodles"],
         "portion_size": "2 servings",
