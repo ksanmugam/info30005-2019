@@ -46,6 +46,14 @@ var findByCuisine = function(req, res) {
     }
 };
 
+var findByFoodName = function(req, res) {
+    for (var i = 0; i < distributors.length; i++) {
+        if (distributors[i].food_name == req.params.food_name) {
+            res.send(distributors[i]);
+        }
+    }
+};
+
 var findByIngredient = function(req, res) {
     for (var i = 0; i < distributors.length; i++) {
         if((distributors[i].ingredients).includes(req.params.ingredients)) {
@@ -54,7 +62,9 @@ var findByIngredient = function(req, res) {
     }
 }
 
+
 module.exports.createDistributor = createDistributor;
 module.exports.findAllDistributors = findAllDistributors;
+module.exports.findByFoodName = findByFoodName;
 module.exports.findByIngredient = findByIngredient;
 module.exports.findByCuisine = findByCuisine;
