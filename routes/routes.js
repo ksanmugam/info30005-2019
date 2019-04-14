@@ -25,6 +25,9 @@ router.post('/api/distributors', distributorController.createDistributor);
 // Find all distributors
 router.get('/api/distributors', distributorController.findAllDistributors);
 
+// Find all by name of food
+router.get('/api/distributors/food_name/:food_name', distributorController.findByFoodName);
+
 // Find distributors by cuisine
 router.get('/api/distributors/cuisine/:cuisine', distributorController.findByCuisine);
 
