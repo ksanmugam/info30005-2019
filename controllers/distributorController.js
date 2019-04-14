@@ -1,4 +1,17 @@
-var distributors= [];
+var distributors= [
+    {   "name": "Matthew Sy",
+        "email": "matthewpesy@yahoo.com",
+        "address": "87 Franklin St",
+        "phone": "0432501567",
+        "rating": "5",
+        "cuisine": "Asian",
+        "food_name": ["Pasta", "Macaroni", "Pizza"],
+        "ingredients": ["Cheese", "Bread", "Noodles"],
+        "portion_size": "2 servings",
+        "allergens": "Dairy",
+        "price": "3AUD"
+    }
+];
 
 var createDistributor = function(req, res) {
     var newDistributor = {
