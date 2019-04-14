@@ -1,4 +1,11 @@
-var ingredients= [];
+var ingredients= [
+    {
+        "food_name": "Fillet Mignon",
+        "cuisine": "English Food",
+        "allergens": "Contains Meat",
+        "price": "AUD$31.50/kg"
+    }
+];
 
 var createIngredient = function(req, res) {
     var newFoodLookUp = {
