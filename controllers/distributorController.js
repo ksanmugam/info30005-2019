@@ -1,4 +1,17 @@
-var distributors= [];
+var distributors= [
+    {   "name": "Matthew Sy",
+        "email": "matthewpesy@yahoo.com",
+        "address": "87 Franklin St",
+        "phone": "0432501567",
+        "rating": "5",
+        "cuisine": "Italian",
+        "food_name": ["Pasta", "Macaroni", "Pizza"],
+        "ingredients": ["Cheese", "Bread", "Noodles"],
+        "portion_size": "2 servings",
+        "allergens": "Dairy",
+        "price": "3AUD"
+    }
+];
 
 var createDistributor = function(req, res) {
     var newDistributor = {
@@ -28,7 +41,7 @@ var findAllDistributors = function(req, res) {
 var findByCuisine = function(req, res) {
     for (var i = 0; i < distributors.length; i++) {
         if (distributors[i].cuisine == req.params.cuisine) {
-            res.send(users[i]);
+            res.send(distributors[i]);
         }
     }
 };
@@ -36,7 +49,7 @@ var findByCuisine = function(req, res) {
 var findByIngredient = function(req, res) {
     for (var i = 0; i < distributors.length; i++) {
         if((distributors[i].ingredients).includes(req.params.ingredients)) {
-            res.send(users[i]);
+            res.send(distributors[i]);
         }
     }
 }
