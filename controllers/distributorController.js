@@ -27,7 +27,7 @@ var findAllDistributors = function(req, res) {
 
 var findByCuisine = function(req, res) {
     for (var i = 0; i < distributors.length; i++) {
-        if (users[i].cuisine == req.params.cuisine) {
+        if (distributors[i].cuisine == req.params.cuisine) {
             res.send(users[i]);
         }
     }
@@ -35,7 +35,7 @@ var findByCuisine = function(req, res) {
 
 var findByIngredient = function(req, res) {
     for (var i = 0; i < distributors.length; i++) {
-        if((users[i].ingredients).includes(req.params.ingredients)) {
+        if((distributors[i].ingredients).includes(req.params.ingredients)) {
             res.send(users[i]);
         }
     }
