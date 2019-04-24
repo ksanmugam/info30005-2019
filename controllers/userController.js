@@ -1,37 +1,13 @@
 var users= [
-	 {
-		 "name":"Matthew Psy",
-		 "email":"sy1@student.unimelb.edu.au",
-		 "address":"CBD",
-		 "phone":"0123456789",
-		 "rating":"5.0",
-		 "cuisine":"Phillipines"
-	 },
-	 {
-		 "name":"Kirentheren Sanmugam",
-		 "email":"ksanmugam@student.unimelb.edu.au",
-		 "address":"Coburg",
-		 "phone":"0454545454",
-		 "rating":"4.4",
-		 "cuisine":"Indian"
-	 },
-	 {
-		 "name":"Kevin Ngoh",
-		 "email":"kngoh1@student.unimelb.edu.au",
-		 "address":"CBD",
-		 "phone":"0456789876",
-		 "rating":"3.0",
-		 "cuisine":"Chinese"
-	 },
-	 {
-		 "name":"Cameron Wilson",
-		 "email":"cwilson4@student.unimelb.edu.au",
-		 "address":"Suburb",
-		 "phone":"0444444444",
-		 "rating":"4.5",
-		 "cuisine":"European"
-	 },
-	 ];
+    {
+        "name": "Cameron",
+        "email": "cwilson4@student.unimelb.edu.au",
+        "address": "123 Tin Alley, Melbourne",
+        "phone": "1234567890",
+        "rating": "5",
+        "cuisine": "Korean"
+    }
+];
 
 var createUser = function(req, res) {
     var newUser = {
@@ -48,14 +24,17 @@ var createUser = function(req, res) {
 
 };
 
+//returns all users
 var findAllUsers = function(req, res) {
     res.send(users);
 };
 
+//return one user based on specified id
 var findOneUser = function(req, res) {
     res.send(users[req.params.id]);
 };
 
+//return one user by specified user name
 var findUserByName = function(req, res) {
     for (var i = 0; i < users.length; i++) {
         if (users[i].name == req.params.name) {
