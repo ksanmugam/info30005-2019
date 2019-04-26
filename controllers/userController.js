@@ -1,47 +1,57 @@
-var users= [
-    {
-        "name": "Cameron",
-        "email": "cwilson4@student.unimelb.edu.au",
-        "address": "123 Tin Alley, Melbourne",
-        "phone": "1234567890",
-        "rating": "5",
-        "cuisine": "Korean"
-    }
-];
+var mongoose = require('mongoose');
+var User = mongoose.model('users');
 
 var createUser = function(req, res) {
-    var newUser = {
+    var user = new User ({
         "name": req.body.name,
         "email": req.body.email,
         "address": req.body.address,
         "phone": req.body.phone,
         "rating": req.body.rating,
         "cuisine": req.body.cuisine
-    };
-
-    users.push(newUser);
-    res.send(newUser);
-
+    });
+    user.save(function(err, newUser){
+    	if(!err){
+    		res.send(newUser);
+    	} else {
+    		res.sendStatus(400);
+    	}
+    });
 };
 
 //returns all users
 var findAllUsers = function(req, res) {
-    res.send(users);
+	User.find(function(err,users){
+        if(!err){
+            res.send(users);
+        } else{
+            res.sendStatus(404);
+        }
+    });
 };
 
 //return one user based on specified id
 var findOneUser = function(req, res) {
-    res.send(users[req.params.id]);
+	var userInx = req.params.id;
+    User.findById(userInx,function(err,user){
+        if(!err){
+            res.send(user);
+        } else{
+            res.sendStatus(404);
+        }
+    });
 };
 
 //return one user by specified user name
 var findUserByName = function(req, res) {
-    for (var i = 0; i < users.length; i++) {
-        if (users[i].name == req.params.name) {
-            res.send(users[i]);
-            break;
+	var userName = req.params.name;
+    User.find({name:userName},function(err,user){
+        if(!err){
+            res.send(userName);
+        } else{
+            res.sendStatus(404);
         }
-    }
+    });
 };
 
 module.exports.createUser = createUser;

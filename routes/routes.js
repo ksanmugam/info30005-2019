@@ -35,6 +35,8 @@ router.get('/api/distributors/cuisine/:cuisine', distributorController.findByCui
 router.get('/api/distributors/ingredients/:ingredients', distributorController.findByIngredient);
 
 
+// Create new ingredients
+router.post('/api/ingredients', ingredientsController.createIngredient);
 
 // Find all ingredients
 router.get('/api/ingredients', ingredientsController.findAllIngredients);

@@ -1,20 +1,8 @@
-var distributors= [
-    {   "name": "Matthew Sy",
-        "email": "matthewpesy@yahoo.com",
-        "address": "87 Franklin St",
-        "phone": "0432501567",
-        "rating": "5",
-        "cuisine": "Italian",
-        "food_name": ["Pasta", "Macaroni", "Pizza"],
-        "ingredients": ["Cheese", "Bread", "Noodles"],
-        "portion_size": "2 servings",
-        "allergens": "Dairy",
-        "price": "3AUD"
-    }
-];
+var mongoose = require('mongoose');
+var Distributor = mongoose.model('distributors');
 
 var createDistributor = function(req, res) {
-    var newDistributor = {
+    var distributor = new Distributor ({
         "name": req.body.name,
         "email": req.body.email,
         "address": req.body.address,
@@ -26,16 +14,25 @@ var createDistributor = function(req, res) {
         "portion_size": req.body.portion_size,
         "allergens": req.body.allergens,
         "price": req.body.price
-    };
-
-    distributors.push(newDistributor);
-    res.send(newDistributor);
-
+    });
+    distributor.save(function(err, newDistributor){
+    	if(!err){
+    		res.send(newDistributor);
+    	} else {
+    		res.sendStatus(400);
+    	}
+    });
 };
 
 //returns all distributors
 var findAllDistributors = function(req, res) {
-    res.send(distributors);
+	Distributor.find(function(err,distributors){
+        if(!err){
+            res.send(distributors);
+        } else{
+            res.sendStatus(404);
+        }
+    });
 };
 
 //returns distributor with specified cuisine
