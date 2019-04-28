@@ -1,210 +1,156 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>It's Amazing Front End</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Foodhub</title>
     <link rel="stylesheet" href="styles.css">
+    <!--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body, html {
+            height: 100%;
+            font-family: "Inconsolata", sans-serif;
+        }
+
+        h1  {
+            font-size: 80px;
+            font-family: "Courier New", serif;:
+            color: black;
+            background-color: #F9E4B7;
+            text-align: center;
+            margin-top:60px;
+            padding: 80px;
+        }
+
+        h2  {
+            font-size: 20px;
+            font-family: "Courier New", serif;
+            color: black;
+            background-color: #F9E4B7;
+            text-align: center;
+            margin-top:50px;
+            margin-left: 200px;
+            margin-right: 200px;
+            padding: 10px;
+        }
+
+        .tag {
+            background-color: #896C39;
+            color:#fff;
+            display:inline-block;
+            padding-left:8px;
+            padding-right:8px;
+            text-align:center
+        }
+
+        .body{
+            margin-left: 200px;
+            margin-right: 200px;
+        }
+
+        .navtab{
+            padding: 20px;
+            text-align: center;
+            background-color: #F9E4B7;
+            position: relative;
+        }
+
+        .float{
+            position:fixed;
+            width:60px;
+            height:60px;
+            bottom:40px;
+            right:40px;
+            background-color:#0C9;
+            color:#FFF;
+            border-radius:50px;
+            text-align:center;
+            box-shadow: 2px 2px 3px #999;
+        }
+
+        .my-float{
+            margin-top:22px;
+        }
+
+    </style>
 </head>
 <body>
 
+
+<container>
+    <div class = "row" id="home">
+        <div class="col-md-3 navtab">
+            <a href="#about" class="button black">ABOUT</a>
+        </div>
+        <div class="col-md-3 navtab">
+            <a href="#search" class="button black">SEARCH</a>
+        </div>
+        <div class="col-md-3 navtab">
+            <a href="#distribute" class="button black">DISTRIBUTE</a>
+        </div>
+        <div class="col-md-3 navtab">
+            <a href="#dishes" class="button black">DISHES</a>
+        </div>
+    </div>
+
+    <div>
+        <a href="#home" class="float">
+            <i class="fa fa-plus my-float"></i>
+        </a>
+
+    </div>
+</container>
+
 <div class="container">
-    <h1>It's Amaaaazing</h1>
+    <h1>It's Amazing</h1>
 </div>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
 
-<style>
-    body, html {
-        height: 100%;
-        font-family: "Inconsolata", sans-serif;
-    }
+<div class="container" id="about">
+    <div>
+        <h2><span class = "tag">ABOUT</span></h2>
+        <p class="body">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-    .bgimg {
-        background-position: center;
-        background-size: cover;
-        background-image: url("/w3images/coffeehouse.jpg");
-        min-height: 75%;
-    }
 
-    .menu {
-        display: none;
-    }
-</style>
-
-<!-- Links (sit on top) -->
-<div class="w3-top">
-    <div class="w3-row w3-padding w3-black">
-        <div class="w3-col s3">
-            <a href="#" class="w3-button w3-block w3-black">HOME</a>
-        </div>
-        <div class="w3-col s3">
-            <a href="#about" class="w3-button w3-block w3-black">ABOUT</a>
-        </div>
-        <div class="w3-col s3">
-            <a href="#menu" class="w3-button w3-block w3-black">MENU</a>
-        </div>
-        <div class="w3-col s3">
-            <a href="#where" class="w3-button w3-block w3-black">WHERE</a>
-        </div>
     </div>
 </div>
 
-<!-- Header with image -->
-<header class="bgimg w3-display-container w3-grayscale-min" id="home">
-    <div class="w3-display-bottomleft w3-center w3-padding-large w3-hide-small">
-        <span class="w3-tag">Open from 6am to 5pm</span>
+
+<div class="container" id="search">
+    <div>
+        <h2><span class = "tag">SEARCH</span></h2>
+        <p class="body">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+
     </div>
-    <div class="w3-display-middle w3-center">
-        <span class="w3-text-white" style="font-size:90px">the<br>Cafe</span>
-    </div>
-    <div class="w3-display-bottomright w3-center w3-padding-large">
-        <span class="w3-text-white">15 Adr street, 5015</span>
-    </div>
-</header>
-
-<!-- Add a background color and large text to the whole page -->
-<div class="w3-sand w3-grayscale w3-large">
-
-    <!-- About Container -->
-    <div class="w3-container" id="about">
-        <div class="w3-content" style="max-width:700px">
-            <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ABOUT THE CAFE</span></h5>
-            <p>The Cafe was founded in blabla by Mr. Smith in lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>In addition to our full espresso and brew bar menu, we serve fresh made-to-order breakfast and lunch sandwiches, as well as a selection of sides and salads and other good stuff.</p>
-            <div class="w3-panel w3-leftbar w3-light-grey">
-                <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i></p>
-                <p>Chef, Coffeeist and Owner: Liam Brown</p>
-            </div>
-            <img src="/info30005-2019/resources/FOOD3.jpeg" style="width:100%;max-width:1000px" class="w3-margin-top">
-            <p><strong>Opening hours:</strong> everyday from 6am to 5pm.</p>
-            <p><strong>Address:</strong> 15 Adr street, 5015, NY</p>
-        </div>
-    </div>
-
-    <!-- Menu Container -->
-    <div class="w3-container" id="menu">
-        <div class="w3-content" style="max-width:700px">
-
-            <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE MENU</span></h5>
-
-            <div class="w3-row w3-center w3-card w3-padding">
-                <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
-                    <div class="w3-col s6 tablink">Eat</div>
-                </a>
-                <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
-                    <div class="w3-col s6 tablink">Drink</div>
-                </a>
-            </div>
-
-            <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
-                <h5>Bread Basket</h5>
-                <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p><br>
-
-                <h5>Honey Almond Granola with Fruits</h5>
-                <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
-
-                <h5>Belgian Waffle</h5>
-                <p class="w3-text-grey">Vanilla flavored batter with malted flour 7.50</p><br>
-
-                <h5>Scrambled eggs</h5>
-                <p class="w3-text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
-
-                <h5>Blueberry Pancakes</h5>
-                <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>
-            </div>
-
-            <div id="Drinks" class="w3-container menu w3-padding-48 w3-card">
-                <h5>Coffee</h5>
-                <p class="w3-text-grey">Regular coffee 2.50</p><br>
-
-                <h5>Chocolato</h5>
-                <p class="w3-text-grey">Chocolate espresso with milk 4.50</p><br>
-
-                <h5>Corretto</h5>
-                <p class="w3-text-grey">Whiskey and coffee 5.00</p><br>
-
-                <h5>Iced tea</h5>
-                <p class="w3-text-grey">Hot tea, except not hot 3.00</p><br>
-
-                <h5>Soda</h5>
-                <p class="w3-text-grey">Coke, Sprite, Fanta, etc. 2.50</p>
-            </div>
-            <img src="/w3images/coffeehouse2.jpg" style="width:100%;max-width:1000px;margin-top:32px;">
-        </div>
-    </div>
-
-    <!-- Contact/Area Container -->
-    <div class="w3-container" id="where" style="padding-bottom:32px;">
-        <div class="w3-content" style="max-width:700px">
-            <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHERE TO FIND US</span></h5>
-            <p>Find us at some address at some place.</p>
-            <img src="/w3images/map.jpg" class="w3-image" style="width:100%">
-            <p><span class="w3-tag">FYI!</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste.</p>
-            <p><strong>Reserve</strong> a table, ask for today's special or just send us a message:</p>
-            <form action="/action_page.php" target="_blank">
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
-                <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
-                <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
-                <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
-                <p><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></p>
-            </form>
-        </div>
-    </div>
-
-    <!-- End page content -->
 </div>
 
-<!-- Footer -->
-<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
 
-<script>
-    // Tabbed Menu
-    function openMenu(evt, menuName) {
-        var i, x, tablinks;
-        x = document.getElementsByClassName("menu");
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablink");
-        for (i = 0; i < x.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
-        }
-        document.getElementById(menuName).style.display = "block";
-        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
-    }
-    document.getElementById("myLink").click();
-</script>
+<div class="container" id="distribute">
+    <div>
+        <h2><span class = "tag">Distribute</span></h2>
+        <p class="body">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
-<!--<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">-->
-    <!--<ol class="carousel-indicators">-->
-        <!--<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>-->
-        <!--<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>-->
-        <!--<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>-->
-    <!--</ol>-->
-    <!--<div class="carousel-inner">-->
-        <!--<div class="carousel-item active">-->
-            <!--<img class="d-block w-100" src="..." alt="First slide">-->
-        <!--</div>-->
-        <!--<div class="carousel-item">-->
-            <!--<img class="d-block w-100" src="..." alt="Second slide">-->
-        <!--</div>-->
-        <!--<div class="carousel-item">-->
-            <!--<img class="d-block w-100" src="..." alt="Third slide">-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">-->
-        <!--<span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
-        <!--<span class="sr-only">Previous</span>-->
-    <!--</a>-->
-    <!--<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">-->
-        <!--<span class="carousel-control-next-icon" aria-hidden="true"></span>-->
-        <!--<span class="sr-only">Next</span>-->
-    <!--</a>-->
-<!--</div>-->
+
+    </div>
+</div>
+
+<div class="container" id="dishes">
+    <div>
+        <h2><span class = "tag">Dishes</span></h2>
+        <p class="body">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </body>
 </html>
