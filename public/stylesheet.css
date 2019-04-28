@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Embedded Style Sheet</title>
-<style>
+<style type="text/css">
+
     body, html {
         height: 100%;
         font-family: "Inconsolata", sans-serif;
@@ -89,4 +90,5 @@
 
     </style>
   </head>
+</body>
 </html>
