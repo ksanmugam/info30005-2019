@@ -8,7 +8,7 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// setup database
+// Database setup
 require('./models/db.js');
 
 var routes = require('./routes/routes.js');
