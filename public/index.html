@@ -75,6 +75,22 @@
             margin-top:22px;
         }
 
+        /* Container holding the image and the text */
+        .image-container {
+            position: relative;
+            text-align: center;
+            color: white;
+        }
+
+        /* Centered text */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 500%;
+            transform: translate(-50%, -50%);
+        }
+
     </style>
 </head>
 <body>
@@ -83,16 +99,16 @@
 <container>
     <div class = "row" id="home">
         <div class="col-md-3 navtab">
-            <a href="#about" class="button black">ABOUT</a>
+            <a href="#about" class="button black">OUR MISSION</a>
         </div>
         <div class="col-md-3 navtab">
-            <a href="#search" class="button black">SEARCH</a>
+            <a href="#search" class="button black">HELP I NEED FOOD</a>
         </div>
         <div class="col-md-3 navtab">
-            <a href="#distribute" class="button black">DISTRIBUTE</a>
+            <a href="#distribute" class="button black">HELP I NEED TO SHARE FOOD</a>
         </div>
         <div class="col-md-3 navtab">
-            <a href="#dishes" class="button black">DISHES</a>
+            <a href="#dishes" class="button black">HELP I DON'T KNOW WHAT TO COOK</a>
         </div>
     </div>
 
@@ -106,44 +122,38 @@
 
 <div class="container">
     <h1>It's Amazing</h1>
+    <div class="image-container">
+        <img src="resources/food1.png" alt="FoodSource" style="width:100%;">
+        <div class="centered">Food Hub</div>
+    </div>
 </div>
-
 
 <div class="container" id="about">
     <div>
-        <h2><span class = "tag">ABOUT</span></h2>
-        <p class="body">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-
+        <h2><span class = "tag">OUR MISSION</span></h2>
+        <p class="body">Our goal as a team was to help tackle food wastage and University Students that want to eat affordable hearthy meals. So we thought why not kill two birds with one stone and combine the two concepts by making an app that helps both the environment and university students.</p>
     </div>
 </div>
-
 
 <div class="container" id="search">
     <div>
-        <h2><span class = "tag">SEARCH</span></h2>
-        <p class="body">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-
+        <h2><span class = "tag">HELP I NEED FOOD</span></h2>
+        <p class="body">Oh no! It seem's like you need food. Well this is the perfect solution for you. What we do is connect you to other individuals that want to share their food portions with you at an affordable price! All you have to do is search for others within your area that are cooking and wants to share their portions with you! It's as easy as that!</p>
     </div>
 </div>
 
-
 <div class="container" id="distribute">
     <div>
-        <h2><span class = "tag">Distribute</span></h2>
-        <p class="body">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-
+        <h2><span class = "tag">HELP I NEED TO SHARE FOOD</span></h2>
+        <p class="body">Oh no! It seem's like need to share food. Well this is the perfect solution for you. What we do is connect you to other individuals that want to eat your food at an affordable price! All you have to do is search for others within your area that are looking for food and wants to purchase your portions. It's as easy as that!</p>
+        </p>
     </div>
 </div>
 
 <div class="container" id="dishes">
     <div>
-        <h2><span class = "tag">Dishes</span></h2>
-        <p class="body">lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-
-
+        <h2><span class = "tag">HELP I DON'T KNOW WHAT TO COOK</span></h2>
+        <p class="body">Oh no! Your fridge is stocked with ingredients, you're ready to cook but you don't know what to cook. #FIRSTWORLDPROBLEMS am I right? Well fret no more, we're here to help! All you have to do is search for the ingredient you have and we'll chuck you quick and easy recipes with maximum taste satisfaction!
     </div>
 </div>
 
