@@ -36,10 +36,6 @@ router.get('/api/distributors/ingredients/:ingredients', distributorController.f
 
 
 
-// Create new Ingredient lookup
-// router.post('/api/distributors', ingredientsController.createIngredient);
-
-
 // Find all ingredients
 router.get('/api/ingredients', ingredientsController.findAllIngredients);
 
