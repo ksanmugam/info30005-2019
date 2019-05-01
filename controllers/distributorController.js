@@ -1,20 +1,8 @@
-var distributors= [
-    {   "name": "Matthew Sy",
-        "email": "matthewpesy@yahoo.com",
-        "address": "87 Franklin St",
-        "phone": "0432501567",
-        "rating": "5",
-        "cuisine": "Italian",
-        "food_name": ["Pasta", "Macaroni", "Pizza"],
-        "ingredients": ["Cheese", "Bread", "Noodles"],
-        "portion_size": "2 servings",
-        "allergens": "Dairy",
-        "price": "3AUD"
-    }
-];
+var mongoose = require('mongoose');
+var Distributor = mongoose.model('distributors');
 
 var createDistributor = function(req, res) {
-    var newDistributor = {
+    var distributor = new Distributor ({
         "name": req.body.name,
         "email": req.body.email,
         "address": req.body.address,
@@ -26,44 +14,80 @@ var createDistributor = function(req, res) {
         "portion_size": req.body.portion_size,
         "allergens": req.body.allergens,
         "price": req.body.price
-    };
-
-    distributors.push(newDistributor);
-    res.send(newDistributor);
-
+    });
+    distributor.save(function(err, newDistributor){
+    	if(!err){
+    		res.send(newDistributor);
+    	} else {
+    		res.sendStatus(400);
+    	}
+    });
 };
 
 //returns all distributors
 var findAllDistributors = function(req, res) {
-    res.send(distributors);
+	Distributor.find(function(err,distributors){
+        if(!err){
+            res.send(distributors);
+        } else{
+            res.sendStatus(404);
+        }
+    });
 };
 
 //returns distributor with specified cuisine
 var findByCuisine = function(req, res) {
-    for (var i = 0; i < distributors.length; i++) {
-        if (distributors[i].cuisine == req.params.cuisine) {
-            res.send(distributors[i]);
-        }
-    }
+	var cuisines = req.params.cuisine;
+    Distributor.find({cuisine:cuisines}, function(err,distributors){
+    	if(!err){
+    		res.send(distributors);
+    	} else {
+    		res.sendStatus(500);
+    	}
+    });
 };
+//	for (var i = 0; i < distributors.length; i++) {
+//        if (distributors[i].cuisine == req.params.cuisine) {
+//            res.send(distributors[i]);
+//        }
+//    }
+//};
 
 //returns distributor with specific food on offer
 var findByFoodName = function(req, res) {
-    for (var i = 0; i < distributors.length; i++) {
-        if (distributors[i].food_name == req.params.food_name) {
-            res.send(distributors[i]);
-        }
-    }
+	var foodname = req.params.food_name;
+	Distributor.find({food_name:foodname}, function(err,distributors){
+		if(!err){
+			res.send(distributors);
+		} else {
+			res.sendStatus(500);
+		}
+	});
 };
+//    for (var i = 0; i < distributors.length; i++) {
+//        if (distributors[i].food_name == req.params.food_name) {
+//            res.send(distributors[i]);
+//        }
+//    }
+//};
 
 //returns all ditributors whose food contains the specified ingredient
 var findByIngredient = function(req, res) {
-    for (var i = 0; i < distributors.length; i++) {
-        if((distributors[i].ingredients).includes(req.params.ingredients)) {
-            res.send(distributors[i]);
-        }
-    }
-}
+	var ingredient = req.params.ingredients;
+	Distributor.find({ingredients:ingredient}, function(err,distributors){
+		if(!err){
+			res.send(distributors);
+		} else {
+			res.sendStatus(500);
+		}
+	});
+};
+//    for (var i = 0; i < distributors.length; i++) {
+//        if((distributors[i].ingredients).includes(req.params.ingredients)) {
+//            res.send(distributors[i]);
+//        }
+//    }
+//}
 
 
 module.exports.createDistributor = createDistributor;
