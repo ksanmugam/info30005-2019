@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Embedded Style Sheet</title>
+<style type="text/css">
+
+    body, html {
+        height: 100%;
+        font-family: "Inconsolata", sans-serif;
+    }
+
+    h1  {
+        font-size: 80px;
+        font-family: "Courier New", serif;:
+    color: black;
+        background-color: #F9E4B7;
+        text-align: center;
+        margin-top:60px;
+        padding: 80px;
+    }
+
+    h2  {
+        font-size: 20px;
+        font-family: "Courier New", serif;
+        color: black;
+        background-color: #F9E4B7;
+        text-align: center;
+        margin-top:50px;
+        margin-left: 200px;
+        margin-right: 200px;
+        padding: 10px;
+    }
+
+    .tag {
+        background-color: #896C39;
+        color:#fff;
+        display:inline-block;
+        padding-left:8px;
+        padding-right:8px;
+        text-align:center
+    }
+
+    .body{
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    .navtab{
+        padding: 20px;
+        text-align: center;
+        background-color: #F9E4B7;
+        position: relative;
+    }
+
+    .float{
+        font-size:10px;
+        padding-top:15px;
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#0C9;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        box-shadow: 2px 2px 3px #999;
+    }
+
+    .my-float{
+        margin-top:22px;
+    }
+
+    /* Container holding the image and the text */
+    .image-container {
+        position: relative;
+        text-align: center;
+        color: white;
+    }
+
+    /* Centered text */
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 500%;
+        transform: translate(-50%, -50%);
+    }
+
+    </style>
+  </head>
+</body>
+</html>
