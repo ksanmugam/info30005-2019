@@ -54,7 +54,25 @@ var findUserByName = function(req, res) {
     });
 };
 
+
+
+
+// TESTING PURPOSES ONLY
+var getIndex = function(req, res) {
+    User.find(function(err, users) {
+        var message = users[0].name;
+        if (!err) {
+            res.render('index', {message});
+        }
+    });
+};
+
+
+
+
+
 module.exports.createUser = createUser;
 module.exports.findAllUsers = findAllUsers;
 module.exports.findOneUser = findOneUser;
 module.exports.findUserByName = findUserByName;
+module.exports.getIndex = getIndex;
