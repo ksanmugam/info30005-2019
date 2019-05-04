@@ -18,9 +18,11 @@ router.get('/api/users/id/:id', controller.findOneUser);
 router.get('/api/users/name/:name', controller.findUserByName);
 
 
+
+
 // TESTING PURPOSES ONLY
 router.get('/', controller.getIndex);
-
+//router.post('/', controller.changeIndex);
 
 
 
