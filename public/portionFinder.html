@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Find Foos</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+<container>
+    <div class = "row" id="home">
+        <div class="col-md-3 navtab">
+            <a href="#about" class="button black">OUR MISSION</a>
+        </div>
+        <div class="col-md-3 navtab">
+            <a href="portionFinder.html" class="button black">I NEED FOOD</a>
+        </div>
+        <div class="col-md-3 navtab">
+            <a href="#distribute" class="button black">I NEED TO SHARE FOOD</a>
+        </div>
+        <div class="col-md-3 navtab">
+            <a href="#dishes" class="button black">I DON'T KNOW WHAT TO COOK</a>
+        </div>
+    </div>
+</container>
+
+
+
+
+<div id="map"></div>
+<script src="javascripts/portionFinder.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiiJnimxZEwmritT4f-bSXimJgSnyUv_4&callback=initMap"
+        async defer></script>
+</body>
+</html>
