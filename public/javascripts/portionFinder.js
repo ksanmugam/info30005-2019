@@ -13,16 +13,16 @@ request.onload = function () {
         data.forEach(distributor => {
 
             temparray.push([
-            '<h4>' + distributor.food_name.toString() + '</h4>' +
-            '<h5>' + distributor.ingredients.toString() + '</h5>' +
-            '<h5>' + distributor.name + '</h5>' +
-            '<h5>' + distributor.email + '</h5>' +
-            '<h5>' + distributor.phone + '</h5>' +
-            '<h5>' + distributor.rating + ' stars' + '</h5>' +
-            '<h5>' + distributor.cuisine + '</h5>' +
-            '<h5>' + distributor.portion_size + '</h5>' +
-            '<h5>' + distributor.allergens + '</h5>' +
-            '<h5>' + distributor.price + '</h5>' +
+            '<h1>' + distributor.food_name.toString() + '</h1>' +
+            '<h2>' + distributor.ingredients.toString() + '</h2>' +
+            '<h2>' + distributor.name + '</h2>' +
+            '<h2>' + distributor.email + '</h2>' +
+            '<h2>' + distributor.phone + '</h2>' +
+            '<h2>' + distributor.rating + ' stars' + '</h2>' +
+            '<h2>' + distributor.cuisine + '</h2>' +
+            '<h2>' + distributor.portion_size + '</h2>' +
+            '<h2>' + distributor.allergens + '</h2>' +
+            '<h2>' + distributor.price + '</h2>' +
             '</div>' +
             '</div>'])
 
@@ -44,8 +44,18 @@ request.send()
 
      var map = new google.maps.Map(document.getElementById('map'), {
          center: {lat: -37.8136, lng: 144.9631},
-         zoom: 15
+         zoom: 15,
+         mapTypeControl: false,
+         streetViewControl: false,
+         fullscreenControl: false,
      });
+
+     var foodicon = {
+         url: 'https://www.pngrepo.com/png/251521/170/food-pin.png',
+         scaledSize: new google.maps.Size(60, 60), // scaled size
+         origin: new google.maps.Point(0,0), // origin
+         anchor: new google.maps.Point(30, 60) // anchor
+     };
 
      var coordinates = [{}];
      var geocoder = new google.maps.Geocoder();
@@ -76,11 +86,13 @@ request.send()
          return locationData // array of promises
      }
 
+
      function placeMarker( loc ) {
          var latLng = new google.maps.LatLng( loc[1], loc[2]);
          var marker = new google.maps.Marker({
              position : latLng,
-             map      : map
+             map      : map,
+             icon     : foodicon
          });
          google.maps.event.addListener(marker, 'click', function(){
              infowindow.close(); // Close previously opened infowindow
