@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Foodhub</title>
-    <link rel="stylesheet" href="stylesheet.css">
+    <link href="stylesheet.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
@@ -96,7 +96,6 @@
 </head>
 <body>
 
-
 <container>
     <div class = "row" id="home">
         <div class="col-md-3 navtab">
@@ -109,7 +108,7 @@
             <a href="#distribute" class="button black">I NEED TO SHARE FOOD</a>
         </div>
         <div class="col-md-3 navtab">
-            <a href="#dishes" class="button black">I DON'T KNOW WHAT TO COOK</a>
+            <a href="ingredient.html" class="button black">I DON'T KNOW WHAT TO COOK</a>
         </div>
     </div>
 
@@ -160,6 +159,13 @@
         <p class="body">Oh no! Your fridge is stocked with ingredients, you're ready to cook but you don't know what to cook. #FIRSTWORLDPROBLEMS am I right? Well fret no more, we're here to help! All you have to do is search for the ingredient you have and we'll chuck you quick and easy recipes with maximum taste satisfaction!
     </div>
 </div>
+
+<!--make this pretty, but this button acts as a navigation function to redirect to the api-->
+<nav>
+    <ul>
+        <li><a href="/api/ingredients">About Us</a></li>
+    </ul>
+</nav>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
