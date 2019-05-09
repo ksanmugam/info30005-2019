@@ -22,7 +22,8 @@ router.get('/api/users/name/:name', controller.findUserByName);
 
 // TESTING PURPOSES ONLY
 router.get('/', controller.getIndex);
-//router.post('/', controller.changeIndex);
+router.post('/', controller.changeIndex);
+router.get('/ingredient', ingredientsController.getPage);
 
 
 

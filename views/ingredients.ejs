@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8">
+        <title>Foodhub - Ingredients</title>
+    </head>
+
+    <body>
+        <div>
+            <form action="" method = 'POST' id="Submit">
+                <input id="Ingredient_name" type='text' name='ingredient_name' /> <br>
+                <input id="Cuisine" type='text' name='ingredient_cuisine' /> <br>
+                <input id ="Allergens" type='text' name='ingredient_allerggens' /> <br>
+                <input id ="Price" type='text' name='ingredient_price' /> <br>
+                <input type='submit' value='Submit' /> <br>
+            </form>
+        </div>
+    </body>
+</html>
+
+<script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("form#Submit").on('submit', function(e) {
+            e.preventDefault();
+            var food_name = $('#Ingredient_name')[0].value;
+            var cuisine = $('#Cuisine')[0].value;
+            var allergens = $('#Allergens')[0].value;
+            var price = $('#Price')[0].value;
+            $.ajax({
+                type: 'post',
+                data: {'food_name': food_name, 'cuisine': cuisine, 'allergens': allergens, 'price': price},
+                dataType: 'json',
+                url: '/api/ingredients'
+            });
+        });
+    });
+</script>

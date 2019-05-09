@@ -17,22 +17,18 @@ require('./models/db.js');
 
 var message = "Hello";
 
-app.post('/test', (req, res) => {
-    message = req.body.message;
-    console.log(req.body);
-    return res.json({ status: "success", message });
-});
+//app.post('/test', (req, res) => {
+//    message = req.body.message;
+//    console.log(req.body);
+//    return res.json({ status: "success", message });
+//});
 
-app.get('/test', function(req, res) {
-    res.render("index", {message});
-})
+//app.get('/test', function(req, res) {
+//    res.render("index", {message});
+//})
 
-
-
-//var routes = require('./routes/routes.js');
-//app.use('/', routes);
-
-
+var routes = require('./routes/routes.js');
+app.use('/', routes);
 
 app.listen(PORT, function(req, res) {
     console.log(`Express listening on port ${PORT}`);
