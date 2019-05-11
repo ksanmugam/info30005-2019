@@ -5,8 +5,8 @@ body, html {
 
 h1  {
     font-size: 80px;
-    font-family: "Courier New", serif;:
-color: black;
+    font-family: "Courier New", sans-serif;:
+	color: black;
     background-color: #F9E4B7;
     text-align: center;
     margin-top:60px;
@@ -40,11 +40,36 @@ h2  {
     margin-bottom: 40px;
 }
 
-.navtab{
+.navbar{
     padding: 20px;
+    width: 100%;
     text-align: center;
     background-color: #F9E4B7;
     position: relative;
+    overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 12px;
+  color: #896C39;
+  text-decoration: none;
+  font-size: 17px;
+  width: 16.66%; /* Four links of equal widths */
+  text-align: center;
+}
+
+.navbar a:hover {
+  background-color: #ffcf68;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
 }
 
 .float{

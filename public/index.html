@@ -1,48 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Required Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Page Title -->
     <title>Foodhub</title>
-
+	
+	<!-- Favicon -->
+	<link rel="shorcut icon" href="images/favicon.png" type="image/png">
+	
+	<!-- CSS Files -->
     <link rel="stylesheet" href="stylesheets/stylesheet.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 
 <container>
     <div class = "row" id="home">
-        <div class="col-md-3 navtab">
+        <div class="navbar">
             <a href="#about" class="button black">OUR MISSION</a>
-        </div>
-        <div class="col-md-3 navtab">
-            <a href="portionFinder.html" class="button black">I NEED FOOD</a>
-        </div>
-        <div class="col-md-3 navtab">
+            <a href="portionFinder.html" class="button black">SEARCH FOR FOOD</a>
+        	<a href=#search class="button black">I NEED FOOD</a> 
             <a href="#distribute" class="button black">I NEED TO SHARE FOOD</a>
-        </div>
-        <div class="col-md-3 navtab">
-            <a href="/ingredient" class="button black">I DON'T KNOW WHAT TO COOK</a>
+            <a href="/ingredient" class="button black">INGREDIENTS</a>
+        	<a href="#dishes" class="button-black">I DON'T KNOW WHAT TO COOK</a>
         </div>
     </div>
-
+    
     <div>
-        <a href="#home" class="float">
-            <i class="fa fa-plus my-float"></i>
-            <p>BACK TO TOP</p>
-        </a>
-
-    </div>
+	<a href="#home" class="float">
+		<i class="fa fa-plus my-float"></i>
+		<p>BACK TO TOP</p>
+	</a>
+	</div>
 </container>
 
 <div class="container">
-    <h1>It's Amazing</h1>
-    <div class="image-container">
-        <img src="images/food1.png" alt="FoodSource" style="width:100%;">
-        <div class="centered">Food Hub</div>
+    <h1>Foodhub</h1>
+</div>
+
+<div class="container">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+
+      <div class="item active">
+        <img src="images/buy1.jpeg" alt="Los Angeles" style="width:100%;height:624px;">
+        <div class="carousel-caption">
+          <h3>Search for food</h3>
+          <p>Buy food from others within your area</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="images/sell.jpg" alt="Chicago" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>Coming soon</h3>
+          <p>Stay tuned!</p>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="images/ingredients.jpg" alt="New York" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>Ingredients</h3>
+          <p>Find for the best food recipes</p>
+        </div>
+      </div>
+  
     </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
 
 <div class="container" id="about">
@@ -75,7 +124,6 @@
         <p class="body">Oh no! Your fridge is stocked with ingredients, you're ready to cook but you don't know what to cook. #FIRSTWORLDPROBLEMS am I right? Well fret no more, we're here to help! All you have to do is search for the ingredient you have and we'll chuck you quick and easy recipes with maximum taste satisfaction!
     </div>
 </div>
-
 </body>
 </html>
 
