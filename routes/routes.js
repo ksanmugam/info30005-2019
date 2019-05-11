@@ -44,5 +44,9 @@ router.get('/api/ingredients', ingredientsController.findAllIngredients);
 // Find Ingredients by cuisine
 router.get('/api/ingredients/cuisine/:cuisine', ingredientsController.findByCuisine);
 
+router.get('/users/login', (req, res) => res.send('Login'));
+
+router.get('/users/register', (req, res) => res.send('Register'));
+
 
 module.exports = router;
