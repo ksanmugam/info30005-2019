@@ -21,11 +21,14 @@ router.get('/api/users/name/:name', controller.findUserByName);
 
 
 // TESTING PURPOSES ONLY
-router.get('/', controller.getIndex);
-router.post('/', controller.changeIndex);
+//router.get('/', controller.getIndex);
+//router.post('/', controller.changeIndex);
 router.get('/ingredient', ingredientsController.getPage);
 
 
+
+// Load Distributors
+router.get('/distributors', distributorController.getPage);
 
 // Create new distributor
 router.post('/api/distributors', distributorController.createDistributor);
