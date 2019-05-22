@@ -1,8 +1,12 @@
 var mongoose = require('mongoose');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 var User = mongoose.model('users');
 
 var createUser = function(req, res) {
     var user = new User ({
+        "username": req.body.username,
+        "password": req.body.password,
         "name": req.body.name,
         "email": req.body.email,
         "address": req.body.address,
@@ -73,10 +77,6 @@ var changeIndex = function(req, res) {
     console.log(req.body);
     return res.json({ status: "success", message });
 };
-
-
-
-
 
 module.exports.createUser = createUser;
 module.exports.findAllUsers = findAllUsers;
