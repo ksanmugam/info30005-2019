@@ -54,7 +54,7 @@ console.log(foodArray);
 //     });
 
 
-
+// creates a div into the html for each item in the food elements retrieved
 function foodTemplate(food) {
     return `
     <div class="food">
@@ -64,7 +64,7 @@ function foodTemplate(food) {
     </div>
     `;
 }
-
+// retrieves the elements from the API and maps with foodTemplate function
 document.getElementById("testapp").innerHTML = `
 <h1 class="app-title">Recipes (${foodArray.length} results)</h1>
 ${foodArray.map(foodTemplate).join("")}

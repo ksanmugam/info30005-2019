@@ -1,13 +1,25 @@
 body, html {
     height: 100%;
     font-family: "Inconsolata", sans-serif;
+
+    /* The image used */
+    background-image: url('https://images.pexels.com/photos/988872/pexels-photo-988872.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+
+    /* Set a specific height */
+    height: 500px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 h1  {
     font-size: 80px;
     font-family: "Courier New", sans-serif;:
 	color: black;
-    background-color: #F9E4B7;
+    background-color: rgba(121, 125, 122, 0.41);
     text-align: center;
     margin-top:60px;
     padding: 80px;
@@ -17,7 +29,7 @@ h2  {
     font-size: 20px;
     font-family: "Courier New", serif;
     color: black;
-    background-color: #F9E4B7;
+    background-color: rgba(121, 125, 122, 0.41);;
     text-align: center;
     margin-top:50px;
     margin-left: 200px;
@@ -26,8 +38,8 @@ h2  {
 }
 
 .tag {
-    background-color: #896C39;
-    color:#fff;
+    /*background-color: rgba(126, 128, 123, 0.31);*/
+    color: #000000;
     display:inline-block;
     padding-left:8px;
     padding-right:8px;
@@ -44,7 +56,7 @@ h2  {
     padding: 20px;
     width: 100%;
     text-align: center;
-    background-color: #F9E4B7;
+    background-color: rgba(243, 249, 237, 0.59);
     position: relative;
     overflow: auto;
 }
@@ -52,7 +64,7 @@ h2  {
 .navbar a {
   float: left;
   padding: 12px;
-  color: #896C39;
+  color: #000000;
   text-decoration: none;
   font-size: 17px;
   width: 16.66%; /* Four links of equal widths */
@@ -60,7 +72,7 @@ h2  {
 }
 
 .navbar a:hover {
-  background-color: #ffcf68;
+  background-color: #fcfff2;
 }
 
 @media screen and (max-width: 500px) {
