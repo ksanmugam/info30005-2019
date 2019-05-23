@@ -116,9 +116,6 @@
         var autocomplete = new google.maps.places.Autocomplete(input);
         autocomplete.addListener('place_changed', function () {
             var place = autocomplete.getPlace();
-// place variable will have all the information you are looking for.
-            console.log(place.geometry['location'].lat());
-            console.log(place.geometry['location'].lng());
         });
 
         google.maps.event.addDomListener(input, 'keydown', function(event) {
