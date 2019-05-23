@@ -25,46 +25,38 @@
 	
 </head>
 <body>
+<container>
+    <div class = "row" id="home">
+        <div class="navbar">
+            <a href="#about" class="button black">OUR MISSION</a>
+            <a href="portionFinder.html" class="button black">I NEED FOOD</a>
+            <a href="#distribute" class="button black">I NEED TO SHARE FOOD</a>
+            <a href="findIngredient.html" class="button-black">I DON'T KNOW WHAT TO COOK</a>
+        </div>
+    </div>
 
-	<header class="main-header">
-		<div class="container text-xs-center text-sm-center text-lg-left">
-			<div class="row">
-			<div class="col-md-4 col-sm-12">
-				<img src="images/logo1.png" alt="Foodhub" class="logo img-fluid">
-			</div>
-			<div class="col-md-8 col-sm-12">
-				<ul class="list-unstyled list-inline text-md-right order-info">
-					<li class="list-inline-item d-xs-none d-sm-none d-md-inline">&nbsp;</li>
-					<li class="list-inline-item"><a href="login.html" class="btn btn-light animation">Login</a></li>
-				</ul>
-			</div>
-			</div>
-		</div>
-	</header>
-	
-	<nav id="nav" class="main-menu navbar navbar-expand-md rounded-0">
-		<div class="container">
-			<button class="navbar-toggler ml-auto rounded-0" type="button" data-toggle="collapse" data-target=".navbar-cat-collapse" aria-controls=".navbar-cat-collapse" aria-expanded="false" aria-badge="Toggle navigation">
-				<span class="navbar-toggler-icon fa fa-bars"></span>
-			</button>
-			<div class="collapse navbar-collapse navbar-cat-collapse">
-				<ul class="nav navbar-nav text-uppercase text-weight-bold">
-					<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-					<li class="nav-item"><a href="#about" class="nav-link">Our Mission</a></li>
-					<li class="nav-item"><a href="#search" class="nav-link">I NEED FOOD</a></li>
-					<li class="nav-item"><a href="#distribute" class="nav-link">I NEED TO SHARE FOOD</a></li>
-					<li class="nav-item"><a href="#dishes" class="nav-link">I DON'T KNOW WHAT TO COOK</a></li>
-					<li class="nav-item dropdown">
-						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Features</a>
-						<ul class="dropdown-menu rounded-0 float-md-right">
-							<a href="portionFinder.html" class="dropdown-item"><i class="fa fa-angle-right"></i> Search for Food</a>
-							<a href="findIngredient.html" class="dropdown-item"><i class="fa fa-angle-right"></i> Recipes</a>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
+
+    <div class="dropdown">
+        <button class="dropbtn">Get Started!</button>
+        <div class="dropdown-content">
+            <a href="#">Login</a>
+            <a href="portionFinder.html">Search for Food</a>
+            <a href="findIngredient.html">Ingredients</a>
+        </div>
+    </div>
+
+    <div>
+	<a href="#home" class="float">
+		<i class="fa fa-plus my-float"></i>
+		<p>BACK TO TOP</p>
+	</a>
+	</div>
+</container>
+
+<div class="container">
+    <h1>Foodhub</h1>
+</div>
+>>>>>>> origin
 
 <div class="container">
   <div id="myCarousel" class="carousel slide" data-ride="carousel">

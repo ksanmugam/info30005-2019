@@ -1,3 +1,5 @@
+
+<<<<<<< HEAD
 body {	
 	font: 14px/24px 'Lato', Arial, Helvetica, sans-serif;
 	color: #303030;
@@ -96,6 +98,7 @@ h6 { font-size: 18px; }
   .btn-default.active,
   .open > .dropdown-toggle.btn-default {
 	background-image: none;
+
   }
   .btn-default.disabled:hover,
   .btn-default[disabled]:hover,
