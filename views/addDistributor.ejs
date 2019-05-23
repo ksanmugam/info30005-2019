@@ -17,7 +17,7 @@
                 <label for = "Name">Name:</label> <br>
                 <input id = "Name" type="text" name = "name"/> <br>
 
-                <label for ="Email">Email Adress:</label> <br>
+                <label for ="Email">Email Address:</label> <br>
                 <input id = "Email" type="text" name = "email"/> <br>
 
                 <label for = "Address">Address:</label> <br>
@@ -58,7 +58,6 @@
                 </a>
             </div>
     </container>
-    
 </html>
 <script src="http://code.jquery.com/jquery-3.1.0.min.js"></script>
 <script>
@@ -106,4 +105,26 @@
             });
         });
     });
+</script>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDiiJnimxZEwmritT4f-bSXimJgSnyUv_4&libraries=places&sensor=false"></script>
+<script>
+    google.maps.event.addDomListener(window, 'load', initialize);
+    function initialize() {
+        var input = document.getElementById('Address');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+        autocomplete.addListener('place_changed', function () {
+            var place = autocomplete.getPlace();
+// place variable will have all the information you are looking for.
+            console.log(place.geometry['location'].lat());
+            console.log(place.geometry['location'].lng());
+        });
+
+        google.maps.event.addDomListener(input, 'keydown', function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+            }
+        });
+    }
 </script>
