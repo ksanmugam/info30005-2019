@@ -17,7 +17,7 @@ body, html {
 
 h1  {
     font-size: 80px;
-    font-family: "Courier New", sans-serif;:
+    font-family: "Courier New", sans-serif;
 	color: black;
     background-color: rgba(121, 125, 122, 0.41);
     text-align: center;
@@ -29,7 +29,7 @@ h2  {
     font-size: 20px;
     font-family: "Courier New", serif;
     color: black;
-    background-color: rgba(121, 125, 122, 0.41);;
+    background-color: rgba(121, 125, 122, 0.41);
     text-align: center;
     margin-top:50px;
     margin-left: 200px;

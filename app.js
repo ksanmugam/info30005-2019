@@ -1,32 +1,59 @@
 const express = require('express');
 const app = express();
 var bodyParser = require('body-parser');
-const expressLayouts = require
+var session = require("express-session");
+
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 const PORT = process.env.PORT || 3200;
- 
+
 app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.set("view engine", "ejs");
 
 const cors = require("cors");
 app.use(cors());
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 // Database setup
 require('./models/db.js');
+var mongoose = require('mongoose');
+var User = mongoose.model('users');
 
-var message = "Hello";
+app.use(session({secret: 'g'}));
 
-//app.post('/test', (req, res) => {
-//    message = req.body.message;
-//    console.log(req.body);
-//    return res.json({ status: "success", message });
-//});
+passport.serializeUser((user, done) => {
+    done(undefined, user._id);
+});
 
-//app.get('/test', function(req, res) {
-//    res.render("index", {message});
-//})
+passport.deserializeUser((obj, done) => {
+    User.findById(obj, function(err, user) {
+        if (err) {
+            return done(err, undefined);
+        }
+        done(undefined, user);
+    });
+});
+
+passport.use(new LocalStrategy(
+    function(username, password, done) {
+      User.findOne({ username: username }, function(err, user) {
+        if (err) { return done(err); }
+        if (!user) {
+          return done(null, false, { message: 'Incorrect username or password.' });
+        }
+        if (!user.validPassword(password)) {
+          return done(null, false, { message: 'Incorrect username or password.' });
+        }
+        return done(null, user);
+      });
+    }
+  ));
 
 var routes = require('./routes/routes.js');
 app.use('/', routes);

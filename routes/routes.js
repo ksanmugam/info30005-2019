@@ -1,9 +1,16 @@
 var express = require('express');
 var router = express.Router();
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 var controller = require('../controllers/userController.js');
 var distributorController = require('../controllers/distributorController.js');
 var ingredientsController = require('../controllers/ingredientsController.js');
+
+// Login
+router.post('/login', passport.authenticate('local', { successRedirect: '/',
+                                                       failureRedirect: '/failure'})
+);
 
 // Create new user
 router.post('/api/users', controller.createUser);
@@ -16,15 +23,6 @@ router.get('/api/users/id/:id', controller.findOneUser);
 
 // Fine one user by name
 router.get('/api/users/name/:name', controller.findUserByName);
-
-
-
-
-// TESTING PURPOSES ONLY
-//router.get('/', controller.getIndex);
-//router.post('/', controller.changeIndex);
-router.get('/ingredient', ingredientsController.getPage);
-
 
 
 // Load Distributors
