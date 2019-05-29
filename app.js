@@ -25,7 +25,11 @@ require('./models/db.js');
 var mongoose = require('mongoose');
 var User = mongoose.model('users');
 
-app.use(session({secret: 'g'}));
+app.use(session({
+	secret: 'g',
+	resave: true,
+	saveUninitialized: true
+}));
 
 passport.serializeUser((user, done) => {
     done(undefined, user._id);
