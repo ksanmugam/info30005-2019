@@ -16,7 +16,7 @@ var createUser = function(req, res) {
     });
     user.save(function(err, newUser){
     	if(!err){
-    		res.send(newUser);
+            res.send(newUser);
     	} else {
     		res.sendStatus(400);
     	}

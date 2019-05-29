@@ -76,7 +76,7 @@
 			 
 			<!-- <form role="form" method="post" action="/features/customer_login/1.2/index.php" id="form" onsubmit="$('#submit').button('loading');"> -->
 
-			<form role="form" method="post" action="/features/customer_login/1.3/index.php" id="register_form">
+			<form role="form" method="post" action="/api/users" id="register_form">
 				<input type="hidden" name="register_external" value="1">
 				<input type="hidden" name="ref" value="login">
     			<div class="row">
@@ -162,7 +162,7 @@
 	  			</div>
 	
 				<div class="row">
-					<div class="col-md-12"><button type="submit" id="submit" name="submit" class="mobile-size-button btn btn-success btn-block" data-default-text="Create Account" data-loading-text="<span class='glyphicon glyphicon-refresh spinning'></span> Creating account">Create Account</button></div>
+					<div class="col-md-12"><button type="submit" id="submit" name="submit" class="mobile-size-button btn btn-success btn-block" data-default-text="Create Account" onclick="document.location.href = '/index.html'" data-loading-text="<span class='glyphicon glyphicon-refresh spinning'></span> Creating account">Create Account</button></div>
 				</div>
     		</form>
 		</div>
