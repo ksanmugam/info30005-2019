@@ -8,8 +8,12 @@ var distributorController = require('../controllers/distributorController.js');
 var ingredientsController = require('../controllers/ingredientsController.js');
 
 // Login
-router.post('/login', passport.authenticate('local', { successRedirect: '/',
-                                                       failureRedirect: '/failure'})
+router.post('/login', passport.authenticate('local', {failureRedirect: '/failure'}), (req, res) => {
+                                                           //console.log(req.user);
+                                                           req.session.user = req.user;
+                                                           //console.log(req.session.user);
+                                                           res.render('index');
+                                                       }
 );
 
 // Create new user

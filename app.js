@@ -33,6 +33,7 @@ app.use(session({
 
 passport.serializeUser((user, done) => {
     done(undefined, user._id);
+    //done(undefined, {'username': user.username, 'password': user.password})
 });
 
 passport.deserializeUser((obj, done) => {

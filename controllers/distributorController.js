@@ -26,7 +26,20 @@ var createDistributor = function(req, res) {
 };
 
 var getPage = function(req, res) {
-    res.render('addDistributor');
+	if (req.session.user) {
+		//console.log(req.session.user);
+		res.render('addDistributor', {
+			nameValue: req.session.user.name,
+			emailValue: req.session.user.email,
+			addressValue: req.session.user.email,
+			phoneValue: req.session.user.phone,
+			ratingValue: req.session.user.rating,
+			cuisineValue: req.session.user.cuisine
+		});
+	}
+	else {
+		res.render('addDistributorEmpty');
+	}
 };
 
 //returns all distributors
