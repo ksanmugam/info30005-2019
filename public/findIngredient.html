@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="stylesheets/ingredientstyle.css" rel="stylesheet" type="text/css">
+<body>
+
+<h2>I don't know what to cook</h2>
+<p>Need help deciding on what to cook and how to cook it?</p>
+
+<!--<div class="dropdown">-->
+    <!--<button class="dropbtn">Click on Me</button>-->
+    <!--<div class="dropdown-content">-->
+        <!--<a href="#" onclick="document.write('Coming Soon')">Search For Recipes</a>-->
+        <!--<a href="#" onclick="document.write('Coming Soon')">Get Random Recipes</a>-->
+        <!--<a href="#" onclick="document.write('Coming Soon')">Search Food Videos</a>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div>
+    <form action="/findIngredient.html" method="POST">
+        <label for="frecipes"><h3>Look for Recipes</h3></label>
+        <div></div>
+        <input type="text" id="frecipes" name="recipes" placeholder="Search for recipes online...">
+
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+
+<div id="testapp"></div>
+
+<script src="javascripts/findIngredient.js"></script>
+<!--<button type="button" onclick="document.write(5 + 6)">Try it</button>-->
+
+</body>
+</html>

@@ -18,9 +18,19 @@
   },
   "homepage": "https://github.com/ksanmugam/info30005-2019#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "mongoose": "^5.5.5",
+    "express-ejs-layouts": "^2.5.0",
+    "express-session": "^1.16.1",
+    "mongoose": "^5.5.7",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "unirest": "^0.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
   }
 }

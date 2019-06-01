@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Distributor = mongoose.model('distributors');
 
 var createDistributor = function(req, res) {
-    var distributor = new Distributor ({
+    var distributor = new Distributor({
         "name": req.body.name,
         "email": req.body.email,
         "address": req.body.address,
@@ -17,11 +17,16 @@ var createDistributor = function(req, res) {
     });
     distributor.save(function(err, newDistributor){
     	if(!err){
-    		res.send(newDistributor);
+			//res.send(newDistributor);
+			return res.json({ status: "success"});
     	} else {
     		res.sendStatus(400);
     	}
     });
+};
+
+var getPage = function(req, res) {
+    res.render('addDistributor');
 };
 
 //returns all distributors
@@ -95,3 +100,4 @@ module.exports.findAllDistributors = findAllDistributors;
 module.exports.findByFoodName = findByFoodName;
 module.exports.findByIngredient = findByIngredient;
 module.exports.findByCuisine = findByCuisine;
+module.exports.getPage = getPage;

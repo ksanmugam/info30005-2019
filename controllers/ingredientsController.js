@@ -29,6 +29,11 @@ var findAllIngredients = function(req,res) {
 	});
 };
 
+
+var getPage = function(req, res) {
+    res.render('ingredients');
+};
+
 // find specific cuisine and returns info
 var findByCuisine = function(req, res) {
 	var ingredientName = req.params.name;
@@ -44,3 +49,4 @@ var findByCuisine = function(req, res) {
 module.exports.createIngredient = createIngredient;
 module.exports.findAllIngredients = findAllIngredients;
 module.exports.findByCuisine = findByCuisine;
+module.exports.getPage = getPage;
