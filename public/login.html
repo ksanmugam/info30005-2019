@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Required Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+	<meta name="author" content="">
+    
+    <!-- Page Title -->
+    <title>Foodhub | Login</title>
+    
+    <!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic" rel="stylesheet" type="text/css">
+	
+	<!-- Favicon -->
+	<link rel="shorcut icon" href="images/favicon.png" type="image/png">
+	
+	<!-- Template CSS Files -->
+    <link rel="stylesheet" href="stylesheets/stylesheet.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+</head>
+<body>
+
+	<header class="main-header">
+		<div class="container text-xs-center text-sm-center text-lg-left">
+			<div class="row">
+			<div class="col-md-4 col-sm-12">
+				<img src="images/logo1.png" alt="Foodhub" class="logo img-fluid">
+			</div>
+			<div class="col-md-8 col-sm-12">
+				<ul class="list-unstyled list-inline text-md-right order-info">
+					<li class="list-inline-item d-xs-none d-sm-none d-md-inline">&nbsp;</li>
+					<li class="list-inline-item"><a href="login.html" class="btn btn-light animation">Login</a></li>
+				</ul>
+			</div>
+			</div>
+		</div>
+	</header>
+	
+	<nav id="nav" class="main-menu navbar navbar-expand-md rounded-0">
+		<div class="container">
+			<button class="navbar-toggler ml-auto rounded-0" type="button" data-toggle="collapse" data-target=".navbar-cat-collapse" aria-controls=".navbar-cat-collapse" aria-expanded="false" aria-badge="Toggle navigation">
+				<span class="navbar-toggler-icon fa fa-bars"></span>
+			</button>
+			<div class="collapse navbar-collapse navbar-cat-collapse">
+				<ul class="nav navbar-nav text-uppercase text-weight-bold">
+					<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+					<li class="nav-item"><a href="index.html#about" class="nav-link">Our Mission</a></li>
+					<li class="nav-item"><a href="index.html#search" class="nav-link">I NEED FOOD</a></li>
+					<li class="nav-item"><a href="index.html#distribute" class="nav-link">I NEED TO SHARE FOOD</a></li>
+					<li class="nav-item"><a href="index.html#dishes" class="nav-link">I DON'T KNOW WHAT TO COOK</a></li>
+					<li class="nav-item dropdown">
+						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Features</a>
+						<ul class="dropdown-menu rounded-0 float-md-right">
+							<a href="portionFinder.html" class="dropdown-item"><i class="fa fa-angle-right"></i> Search for Food</a>
+							<a href="findIngredient.html" class="dropdown-item"><i class="fa fa-angle-right"></i> Recipes</a>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+<!-- Popup -->
+<div class="container">
+    <div class="row">
+        <!-- login box starts here -->
+        <div class="col-md-6 col-md-offset-3 formFixedBg reviewMargin formRounded">
+            <!-- <div class="alert alert-warning" style="color:black;">All customers are now required to register and login. Our "Guest checkout" is no longer available. <strong>Try our Facebook or Google option, it's super easy.</strong></div> -->
+            <h3 style="padding-bottom:20px;">Login</h3>
+            <form action="/login" role="form" method="post" id="login-form" onsubmit="$('#submitLogin').button('loading')">
+                <input type="hidden" name="login_external" value="1">
+                <input type="hidden" name="ref" value="login">
+                <div class="form-group">
+                    <label for="email">Username</label>
+                    <input type="text" name="username" class="form-control" id="username" autocomplete="on" required placeholder="e.g. postmalone@alumbra.com.au" value="">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" required placeholder="Password" autocomplete="on">
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <div class="checkbox" style="margin-top:0px;">
+                                <label><input type="checkbox" id="remember" name="remember" value="on" checked="checked" > Stay logged in</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <div class="form-group">
+                            <p><a href="/reset-password.php">Coming soon (reset password!)</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-6">
+                            <button type="submit" class="mobile-size-button btn btn-primary btn-block"> Log In <span class='glyphicon glyphicon-refresh spinning userLoginLoad' style="display:none;"></button>
+                            <p style="height:5px;">&nbsp;</p>
+                        </div>
+                                                <div class="col-sm-6 col-md-6">
+                            <button type="button" class="btn btn-info"
+                            
+
+                            onclick="javascript:location.href='/register.html?ref=login'"
+
+                            
+                            style="width:100%;">Register</button>
+                            <p style="height:5px;">&nbsp;</p>
+                        </div>
+                                            </div>
+                </div>
+            </form>
+        </div>
+        <!-- login box ends here -->
+    </div>
+</div>

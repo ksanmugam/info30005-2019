@@ -51,12 +51,6 @@ var findByCuisine = function(req, res) {
     	}
     });
 };
-//	for (var i = 0; i < distributors.length; i++) {
-//        if (distributors[i].cuisine == req.params.cuisine) {
-//            res.send(distributors[i]);
-//        }
-//    }
-//};
 
 //returns distributor with specific food on offer
 var findByFoodName = function(req, res) {
@@ -69,12 +63,6 @@ var findByFoodName = function(req, res) {
 		}
 	});
 };
-//    for (var i = 0; i < distributors.length; i++) {
-//        if (distributors[i].food_name == req.params.food_name) {
-//            res.send(distributors[i]);
-//        }
-//    }
-//};
 
 //returns all ditributors whose food contains the specified ingredient
 var findByIngredient = function(req, res) {
@@ -87,12 +75,6 @@ var findByIngredient = function(req, res) {
 		}
 	});
 };
-//    for (var i = 0; i < distributors.length; i++) {
-//        if((distributors[i].ingredients).includes(req.params.ingredients)) {
-//            res.send(distributors[i]);
-//        }
-//    }
-//}
 
 
 module.exports.createDistributor = createDistributor;
