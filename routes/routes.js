@@ -18,6 +18,11 @@ router.get('/logout', function(req, res){
     res.redirect('/');
 });
 
+router.get('/getUser', function(req, res){
+    var user = req.user.name;
+    res.send(user);
+});
+
 // Create new user
 router.post('/api/users', controller.createUser);
 
@@ -82,3 +87,11 @@ function ensureLoggedIn() {
         }
     }
 }
+
+// function getUser() {
+//     return function(req, res, next) {
+//         res.locals.user = req.user.name;
+//         console.log(res.locals.user);
+//         next();
+//     }
+// }

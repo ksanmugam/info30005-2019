@@ -1,10 +1,19 @@
+var requestOne = new XMLHttpRequest()
 var request = new XMLHttpRequest()
 var posts = [];
+var currUser = "";
 
-request.open('GET', '/api/distributors/name/:' + req.user.name.toString(), false)
+
+
+getUser();
+
+console.log(currUser);
+
+request.open('GET', '/api/distributors/name/' + currUser, false)
 request.onload = function () {
     // Begin accessing JSON data here
     var data = JSON.parse(this.response)
+
 
     if (request.status >= 200 && request.status < 400) {
         var temparray = []
@@ -32,6 +41,16 @@ request.onload = function () {
 }
 
 request.send()
+
+
+function getUser() {
+    requestOne.open('GET', '/getUser', false)
+    requestOne.onload = function () {
+    currUser = this.response;
+
+    }
+    requestOne.send();
+}
 
 
 
