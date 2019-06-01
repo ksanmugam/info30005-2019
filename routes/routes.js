@@ -47,6 +47,8 @@ router.get('/api/distributors/cuisine/:cuisine', distributorController.findByCui
 // Fine distributors by ingredient
 router.get('/api/distributors/ingredients/:ingredients', distributorController.findByIngredient);
 
+// Remove distributor
+router.delete('/distributors', distributorController.removeDistributor);
 
 // Create new ingredients
 router.post('/api/ingredients', ingredientsController.createIngredient);

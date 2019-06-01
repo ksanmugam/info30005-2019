@@ -89,6 +89,11 @@ var findByIngredient = function(req, res) {
 	});
 };
 
+var removeDistributor = function(req, res) {
+	var nameToRemove = req.params.name;
+	Distributor.deleteOne({name: nameToRemove});
+};
+
 
 module.exports.createDistributor = createDistributor;
 module.exports.findAllDistributors = findAllDistributors;
@@ -96,3 +101,4 @@ module.exports.findByFoodName = findByFoodName;
 module.exports.findByIngredient = findByIngredient;
 module.exports.findByCuisine = findByCuisine;
 module.exports.getPage = getPage;
+module.exports.removeDistributor = removeDistributor;
