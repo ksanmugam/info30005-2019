@@ -128,7 +128,7 @@ p  {
 }
 
 body {
-    background-image: url('/public/images/ingredientsbackground.png');
+    /*background-image: url('images/ingredientsbackground.png');*/
     background-size: cover;
     background-color: #cccccc;
     /*background-position: center center;*/
