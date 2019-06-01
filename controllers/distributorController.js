@@ -76,6 +76,18 @@ var findByIngredient = function(req, res) {
 	});
 };
 
+//returns all ditributors whose food contains the specified ingredient
+var findByName= function(req, res) {
+	var names = req.params.name;
+	Distributor.find({name:names}, function(err,distributors){
+		if(!err){
+			res.send(distributors);
+		} else {
+			res.sendStatus(500);
+		}
+	});
+};
+
 
 module.exports.createDistributor = createDistributor;
 module.exports.findAllDistributors = findAllDistributors;
@@ -83,3 +95,4 @@ module.exports.findByFoodName = findByFoodName;
 module.exports.findByIngredient = findByIngredient;
 module.exports.findByCuisine = findByCuisine;
 module.exports.getPage = getPage;
+module.exports.findByName = findByName;

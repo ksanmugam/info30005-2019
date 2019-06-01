@@ -8,7 +8,7 @@ var distributorController = require('../controllers/distributorController.js');
 var ingredientsController = require('../controllers/ingredientsController.js');
 
 // Login
-router.post('/login', passport.authenticate('local', { successRedirect: '/',
+router.post('/login', passport.authenticate('local', { successRedirect: '/tempProfile.html',
                                                        failureRedirect: '/failure'})
 );
 
@@ -46,8 +46,11 @@ router.get('/api/distributors/food_name/:food_name', distributorController.findB
 // Find distributors by cuisine
 router.get('/api/distributors/cuisine/:cuisine', distributorController.findByCuisine);
 
-// Fine distributors by ingredient
+// Find distributors by ingredient
 router.get('/api/distributors/ingredients/:ingredients', distributorController.findByIngredient);
+
+// Find distributors by Name
+router.get('/api/distributors/name/:distributor_name', ensureLoggedIn(), distributorController.findByName);
 
 
 // Create new ingredients
