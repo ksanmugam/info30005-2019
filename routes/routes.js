@@ -12,6 +12,12 @@ router.post('/login', passport.authenticate('local', { successRedirect: '/',
                                                        failureRedirect: '/failure'})
 );
 
+router.get('/logout', function(req, res){
+    res.clearCookie('connect.sid', {path: '/'});
+    req.logOut();
+    res.redirect('/');
+});
+
 // Create new user
 router.post('/api/users', controller.createUser);
 
@@ -26,7 +32,7 @@ router.get('/api/users/name/:name', controller.findUserByName);
 
 
 // Load Distributors
-router.get('/distributors', distributorController.getPage);
+router.get('/distributors', ensureLoggedIn(), distributorController.getPage);
 
 // Create new distributor
 router.post('/api/distributors', distributorController.createDistributor);
@@ -58,4 +64,18 @@ router.get('/users/login', (req, res) => res.send('Login'));
 router.get('/users/register', (req, res) => res.send('Register'));
 
 
+
 module.exports = router;
+
+
+
+function ensureLoggedIn() {
+    return function(req, res, next) {
+        // isAuthenticated is set by `deserializeUser()`
+        if (!req.isAuthenticated || !req.isAuthenticated()) {
+            res.redirect('/login.html');
+        } else {
+            next()
+        }
+    }
+}

@@ -16,3 +16,5 @@ var distributorSchema = mongoose.Schema(
     }
 );
 mongoose.model('distributors',distributorSchema);
+
+module.exports = distributorSchema;

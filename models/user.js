@@ -1,4 +1,5 @@
 var mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 var userSchema = mongoose.Schema(
     {
@@ -16,4 +17,7 @@ var userSchema = mongoose.Schema(
 userSchema.methods.validPassword = function(password) {
     return this.password == password;
 };
+
+
+
 mongoose.model('users',userSchema);
