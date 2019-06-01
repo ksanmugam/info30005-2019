@@ -58,7 +58,7 @@ var findByCuisine = function(req, res) {
 	var cuisines = req.params.cuisine;
     Distributor.find({cuisine:cuisines}, function(err,distributors){
     	if(!err){
-    		res.send(distributors);
+			res.send(distributors);
     	} else {
     		res.sendStatus(500);
     	}

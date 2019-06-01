@@ -1,12 +1,10 @@
 var mongoose = require('mongoose');
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
 var User = mongoose.model('users');
 
 var createUser = function(req, res) {
     var user = new User ({
         "username": req.body.username,
-        "password": req.body.password,
+        "password": User.generateHash(req.body.password),
         "name": req.body.name,
         "email": req.body.email,
         "address": req.body.address,
