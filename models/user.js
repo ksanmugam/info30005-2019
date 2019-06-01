@@ -1,5 +1,5 @@
+var distributorSchema = require('./distributor.js');
 var mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
 var userSchema = mongoose.Schema(
     {
@@ -10,7 +10,8 @@ var userSchema = mongoose.Schema(
         "address":String,
         "phone":String,
         "rating":String,
-        "cuisine":String
+        "cuisine":String,
+        "posts": [{ type: this.Types.ObjectId, ref: 'distributors' }]
     }
 );
 
@@ -21,3 +22,4 @@ userSchema.methods.validPassword = function(password) {
 
 
 mongoose.model('users',userSchema);
+mongoose.model('distributors',distributorSchema);
