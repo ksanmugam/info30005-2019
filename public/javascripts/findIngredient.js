@@ -1,15 +1,21 @@
 var request = new XMLHttpRequest()
 var foodArray = [];
 
+// accesses the API to retrieve the data.
+// Default values set by Kevin
+// number = 10
+// -- being the number of results we want to find
 request.open('GET', 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ranking=1&ignorePantry=false&ingredients='+getQueryParameters(), false)
 request.setRequestHeader("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com");
 request.setRequestHeader("X-RapidAPI-Key", "ab90f6be77msh0447acdc77eb420p18e99ejsndcb18549f8bb");
 request.onload = function () {
+
     // Begin accessing JSON data here
     var data = JSON.parse(this.response)
 
     if (request.status >= 200 && request.status < 400) {
 
+        // For each item add it to the array
         data.forEach(distributor => {
 
             foodArray.push(distributor);
@@ -23,39 +29,9 @@ request.onload = function () {
 
 request.send()
 
-console.log(foodArray);
+// console.log(foodArray);
 
-// var savedPromise = getData();
-// console.log(savedPromise);
-// savedPromise.then
-// (function(returnVals) {
-//     console.log(returnVals);
-// })
-// console.log(savedPromise);
-
-// unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients=chicken")
-//     .header("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
-//     .header("X-RapidAPI-Key", "ab90f6be77msh0447acdc77eb420p18e99ejsndcb18549f8bb")
-//     .end(function (result) {
-//         // var food = JSON.parse(result.body);
-//         var foods = result.body;
-//         var foodData = [];
-//
-//         for (var i = 0; i < foods.length; i++) {
-//             var food = foods[i];
-//             // console.log(food);
-//             foodData.push(food);
-//         }
-//         console.log(foodData);
-//
-//         // console.log(result.status, result.headers, result.body);
-//     });
-
-// function getFood() {
-//     var reply = document.getElementById("frecipes").value;
-//     return reply;
-// }
-
+// Function that retrieves the input from the HTML and passes it on to the api to retrieve desired input.
 function getQueryParameters() {
     var query = window.location.href.split('?')[1];
 

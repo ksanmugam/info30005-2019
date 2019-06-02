@@ -11,6 +11,11 @@ img {
     height: auto;
 }
 
+.back-button{
+    text-align: right;
+
+}
+
 .app-title {
     text-align: center;
     font-weight: normal;
