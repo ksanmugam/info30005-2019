@@ -22,16 +22,16 @@ request.onload = function () {
         var temp_IDs = []
         data.forEach(distributor => {
                 temparray.push([
-                    '<h1>' + distributor.food_name.toString() + '</h1>' +
-                    '<h2>' + distributor.ingredients.toString() + '</h2>' +
-                    '<h2>' + distributor.name + '</h2>' +
-                    '<h2>' + distributor.email + '</h2>' +
-                    '<h2>' + distributor.phone + '</h2>' +
-                    '<h2>' + distributor.rating + ' stars' + '</h2>' +
-                    '<h2>' + distributor.cuisine + '</h2>' +
-                    '<h2>' + distributor.portion_size + '</h2>' +
-                    '<h2>' + distributor.allergens + '</h2>' +
-                    '<h2>' + distributor.price + '</h2>' +
+                    '<h2>' + distributor.food_name.toString() + '</h2>' +
+                    '<h4>' + distributor.ingredients.toString() + '</h4>' +
+                    '<h4>' + distributor.name + '</h4>' +
+                    '<h4>' + distributor.email + '</h4>' +
+                    '<h4>' + distributor.phone + '</h4>' +
+                    '<h4>' + distributor.rating + ' stars' + '</h4>' +
+                    '<h4>' + distributor.cuisine + '</h4>' +
+                    '<h4>' + distributor.portion_size + '</h4>' +
+                    '<h4>' + distributor.allergens + '</h4>' +
+                    '<h4>' + distributor.price + '</h4>' +
                     '</div>' +
                     '</div>'])
 

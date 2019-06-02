@@ -51,7 +51,8 @@ h1 {
 
 .center {
      text-align: center;
- }
+}
+
 body {
     background-image: url("/../images/food.png");
     /*background-size: cover;*/
