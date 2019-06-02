@@ -1,8 +1,7 @@
 var request = new XMLHttpRequest()
-
 var foodArray = [];
 
-request.open('GET', 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients='+getQueryParameters(), false)
+request.open('GET', 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ranking=1&ignorePantry=false&ingredients='+getQueryParameters(), false)
 request.setRequestHeader("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com");
 request.setRequestHeader("X-RapidAPI-Key", "ab90f6be77msh0447acdc77eb420p18e99ejsndcb18549f8bb");
 request.onload = function () {
@@ -10,8 +9,7 @@ request.onload = function () {
     var data = JSON.parse(this.response)
 
     if (request.status >= 200 && request.status < 400) {
-        var temparray = []
-        var tempaddresses = []
+
         data.forEach(distributor => {
 
             foodArray.push(distributor);
@@ -88,7 +86,7 @@ function foodTemplate(food) {
 
 // retrieves the elements from the API and maps with foodTemplate function
 document.getElementById("testapp").innerHTML = `
-<h1 class="app-title">Recipes (${foodArray.length} results)</h1>
+<h1 class="app-title">${foodArray.length} RECIPES FOUND</h1>
 ${foodArray.map(foodTemplate).join("")}
-<p class="footer">These ${foodArray.length} food were added recently. Check back soon for updates.</p>
+<p class="footer">These ${foodArray.length} recipes are the most popular. Check back soon for new recipes.</p>
 `;
