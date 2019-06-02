@@ -31,6 +31,10 @@ img {
     overflow: hidden;
 }
 
+.buton {    
+    text-align: center;
+}
+
 .food h4 {
     margin: 0 0 6px 0;
     font-family: "Courier New", serif;:
@@ -66,10 +70,14 @@ color: white;
     margin: 0;
 }
 
+h1 {
+    text-align: center;
+}
+
 h2  {
     font-size: 50px;
     font-family: "Adobe Garamond Pro", serif;:
-    color: white;
+color: white;
     text-align: center;
     margin-top:60px;
     padding:10px;
@@ -84,7 +92,7 @@ h3  {
 p  {
     font-size: 20px;
     font-family: "Courier New", serif;:
-    color: white;
+color: white;
     text-align: center;
     margin-top:60px;
     padding:10px;

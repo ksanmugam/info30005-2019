@@ -1,3 +1,4 @@
+
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
 
@@ -10,7 +11,7 @@ var userSchema = mongoose.Schema(
         "address":String,
         "phone":String,
         "rating":String,
-        "cuisine":String
+        "cuisine":String,
     }
 );
 

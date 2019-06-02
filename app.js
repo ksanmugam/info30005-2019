@@ -17,8 +17,6 @@ app.set("view engine", "ejs");
 const cors = require("cors");
 app.use(cors());
 
-app.use(passport.initialize());
-app.use(passport.session());
 
 // Database setup
 require('./models/db.js');
@@ -30,6 +28,9 @@ app.use(session({
 	resave: true,
 	saveUninitialized: true
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 passport.serializeUser((user, done) => {
     done(undefined, user._id);
@@ -63,6 +64,6 @@ passport.use(new LocalStrategy(
 var routes = require('./routes/routes.js');
 app.use('/', routes);
 
-app.listen(PORT, function(req, res) {
+app.listen(PORT, function() {
     console.log(`Express listening on port ${PORT}`);
 });

@@ -101,6 +101,11 @@ request.send()
          });
          bounds.extend(marker.getPosition());
          map.fitBounds(bounds);
+
+         marker.addListener('click', function() {
+             map.setZoom(15);
+             map.setCenter(marker.getPosition());
+         });
      }
 
      var locations = getPoints(geocoder, map)

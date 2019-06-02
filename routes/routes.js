@@ -7,14 +7,23 @@ var controller = require('../controllers/userController.js');
 var distributorController = require('../controllers/distributorController.js');
 var ingredientsController = require('../controllers/ingredientsController.js');
 
-// Login
-router.post('/login', passport.authenticate('local', {failureRedirect: '/failure'}), (req, res) => {
-                                                           //console.log(req.user);
-                                                           req.session.user = req.user;
-                                                           //console.log(req.session.user);
-                                                           res.render('index');
-                                                       }
+//Login
+router.post('/login', passport.authenticate('local', { successRedirect: '/tempProfile.html',
+    failureRedirect: '/failure'})
 );
+
+//Logout and delete cookies
+router.get('/logout', function(req, res){
+    res.clearCookie('connect.sid', {path: '/'});
+    req.logOut();
+    res.redirect('/');
+});
+
+//Get current logged in user
+router.get('/getUser', function(req, res){
+    var user = req.user.name;
+    res.send(user);
+});
 
 // Create new user
 router.post('/api/users', controller.createUser);
@@ -30,7 +39,7 @@ router.get('/api/users/name/:name', controller.findUserByName);
 
 
 // Load Distributors
-router.get('/distributors', distributorController.getPage);
+router.get('/distributors', ensureLoggedIn(), distributorController.getPage);
 
 // Create new distributor
 router.post('/api/distributors', distributorController.createDistributor);
@@ -44,11 +53,14 @@ router.get('/api/distributors/food_name/:food_name', distributorController.findB
 // Find distributors by cuisine
 router.get('/api/distributors/cuisine/:cuisine', distributorController.findByCuisine);
 
-// Fine distributors by ingredient
+// Find distributors by ingredient
 router.get('/api/distributors/ingredients/:ingredients', distributorController.findByIngredient);
 
+// Find distributors by Name
+router.get('/api/distributors/name/:name', distributorController.findByName);
+
 // Remove distributor
-router.delete('/distributors', distributorController.removeDistributor);
+router.delete('/distributors/id/:id', distributorController.removeDistributor);
 
 // Create new ingredients
 router.post('/api/ingredients', ingredientsController.createIngredient);
@@ -59,9 +71,26 @@ router.get('/api/ingredients', ingredientsController.findAllIngredients);
 // Find Ingredients by cuisine
 router.get('/api/ingredients/cuisine/:cuisine', ingredientsController.findByCuisine);
 
+//Login
 router.get('/users/login', (req, res) => res.send('Login'));
 
+//Register
 router.get('/users/register', (req, res) => res.send('Register'));
 
 
 module.exports = router;
+
+
+
+//Middleware to ensure authentication
+function ensureLoggedIn() {
+    return function(req, res, next) {
+        // isAuthenticated is set by `deserializeUser()`
+        if (!req.isAuthenticated || !req.isAuthenticated()) {
+            res.redirect('/login.html');
+        } else {
+            next()
+        }
+    }
+}
+

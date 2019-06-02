@@ -77,7 +77,7 @@ var findByFoodName = function(req, res) {
 	});
 };
 
-//returns all ditributors whose food contains the specified ingredient
+//returns all distributors whose food contains the specified ingredient
 var findByIngredient = function(req, res) {
 	var ingredient = req.params.ingredients;
 	Distributor.find({ingredients:ingredient}, function(err,distributors){
@@ -89,9 +89,22 @@ var findByIngredient = function(req, res) {
 	});
 };
 
+
+//returns all distributors with a specific name
+var findByName = function(req, res) {
+	var currName = req.params.name;
+	Distributor.find({name: currName}, function (err, distributors) {
+		if (!err) {
+			res.send(distributors);
+		} else {
+			res.sendStatus(500);
+		}
+	});
+};
+
 var removeDistributor = function(req, res) {
-	var nameToRemove = req.params.name;
-	Distributor.deleteOne({name: nameToRemove});
+	var postToRemove = req.params.id;
+	Distributor.deleteOne({id: postToRemove});
 };
 
 
@@ -101,4 +114,5 @@ module.exports.findByFoodName = findByFoodName;
 module.exports.findByIngredient = findByIngredient;
 module.exports.findByCuisine = findByCuisine;
 module.exports.getPage = getPage;
+module.exports.findByName = findByName;
 module.exports.removeDistributor = removeDistributor;

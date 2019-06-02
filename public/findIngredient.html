@@ -2,31 +2,27 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="stylesheets/ingredientstyle.css" rel="stylesheet" type="text/css">
+    <link href="stylesheets/ingredientstyle.css" rel="stylesheet">
+</head>
 <body>
 
-<h2>I don't know what to cook</h2>
-<p>Need help deciding on what to cook and how to cook it?</p>
-
-<!--<div class="dropdown">-->
-    <!--<button class="dropbtn">Click on Me</button>-->
-    <!--<div class="dropdown-content">-->
-        <!--<a href="#" onclick="document.write('Coming Soon')">Search For Recipes</a>-->
-        <!--<a href="#" onclick="document.write('Coming Soon')">Get Random Recipes</a>-->
-        <!--<a href="#" onclick="document.write('Coming Soon')">Search Food Videos</a>-->
-    <!--</div>-->
-<!--</div>-->
-
+<h2>FOODHUB FOODBANK</h2>
 <div>
-    <form action="/findIngredient.html" method="POST">
-        <label for="frecipes"><h3>Look for Recipes</h3></label>
+    <form action="/findIngredient.html" method="GET">
+        <label for="frecipes"><h3>Search for Recipes</h3></label>
         <div></div>
-        <input type="text" id="frecipes" name="recipes" placeholder="Search for recipes online...">
-
-        <input type="submit" value="Submit">
+        <input type="text" id="frecipes" name="recipes" placeholder="e.g. chicken, pork, potatoes, leek, etc..">
+        <input type="submit" id="result" value="Search">
     </form>
-</div>
+</div
 
+<container>
+    <div>
+        <a href="index.html" class="float">
+            <p class = "float">Return home</p>
+        </a>
+    </div>
+</container>
 
 <div id="testapp"></div>
 
