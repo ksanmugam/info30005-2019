@@ -26,7 +26,20 @@ var createDistributor = function(req, res) {
 };
 
 var getPage = function(req, res) {
-    res.render('addDistributor');
+	if (req.session.user) {
+		//console.log(req.session.user);
+		res.render('addDistributor', {
+			nameValue: req.session.user.name,
+			emailValue: req.session.user.email,
+			addressValue: req.session.user.email,
+			phoneValue: req.session.user.phone,
+			ratingValue: req.session.user.rating,
+			cuisineValue: req.session.user.cuisine
+		});
+	}
+	else {
+		res.render('addDistributorEmpty');
+	}
 };
 
 //returns all distributors
@@ -45,7 +58,7 @@ var findByCuisine = function(req, res) {
 	var cuisines = req.params.cuisine;
     Distributor.find({cuisine:cuisines}, function(err,distributors){
     	if(!err){
-    		res.send(distributors);
+			res.send(distributors);
     	} else {
     		res.sendStatus(500);
     	}
@@ -76,6 +89,7 @@ var findByIngredient = function(req, res) {
 	});
 };
 
+
 //returns all distributors with a specific name
 var findByName = function(req, res) {
 	var currName = req.params.name;
@@ -86,6 +100,10 @@ var findByName = function(req, res) {
 			res.sendStatus(500);
 		}
 	});
+
+var removeDistributor = function(req, res) {
+	var nameToRemove = req.params.name;
+	Distributor.deleteOne({name: nameToRemove});
 };
 
 
@@ -96,3 +114,4 @@ module.exports.findByIngredient = findByIngredient;
 module.exports.findByCuisine = findByCuisine;
 module.exports.getPage = getPage;
 module.exports.findByName = findByName;
+module.exports.removeDistributor = removeDistributor;

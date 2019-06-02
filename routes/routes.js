@@ -8,8 +8,12 @@ var distributorController = require('../controllers/distributorController.js');
 var ingredientsController = require('../controllers/ingredientsController.js');
 
 // Login
-router.post('/login', passport.authenticate('local', { successRedirect: '/tempProfile.html',
-                                                       failureRedirect: '/failure'})
+router.post('/login', passport.authenticate('local', {failureRedirect: '/failure'}), (req, res) => {
+                                                           //console.log(req.user);
+                                                           req.session.user = req.user;
+                                                           //console.log(req.session.user);
+                                                           res.render('tempProfile.html');
+                                                       }
 );
 
 router.get('/logout', function(req, res){
@@ -57,6 +61,8 @@ router.get('/api/distributors/ingredients/:ingredients', distributorController.f
 // Find distributors by Name
 router.get('/api/distributors/name/:name', distributorController.findByName);
 
+// Remove distributor
+router.delete('/distributors', distributorController.removeDistributor);
 
 // Create new ingredients
 router.post('/api/ingredients', ingredientsController.createIngredient);
