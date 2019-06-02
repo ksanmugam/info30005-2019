@@ -64,7 +64,7 @@ var findByFoodName = function(req, res) {
 	});
 };
 
-//returns all ditributors whose food contains the specified ingredient
+//returns all distributors whose food contains the specified ingredient
 var findByIngredient = function(req, res) {
 	var ingredient = req.params.ingredients;
 	Distributor.find({ingredients:ingredient}, function(err,distributors){
@@ -76,10 +76,10 @@ var findByIngredient = function(req, res) {
 	});
 };
 
-//returns all ditributors whose food contains the specified ingredient
-var findByName= function(req, res) {
-	var names = req.params.name;
-	Distributor.find({name:names}, function(err,distributors){
+//returns all distributors with a specific name
+var findByName = function(req, res) {
+	var currName = req.params.name;
+	Distributor.find({name:currName}, function(err,distributors){
 		if(!err){
 			res.send(distributors);
 		} else {

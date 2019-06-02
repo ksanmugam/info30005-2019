@@ -67,8 +67,8 @@ function getUser() {
 //     `;
 // }
 // // retrieves the elements from the API and maps with foodTemplate function
-// document.getElementById("testapp").innerHTML = `
-// <h1 class="app-title">Recipes (${foodArray.length} results)</h1>
-// ${foodArray.map(foodTemplate).join("")}
-// <p class="footer">These ${foodArray.length} food were added recently. Check back soon for updates.</p>
-// `;
+document.getElementById("post").innerHTML = posts[0];
+
+document.getElementById("post").innerHTML = `
+<h1 class="app-title">${posts.length} Listing</h1>
+${posts.join("")}`;

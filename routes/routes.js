@@ -55,7 +55,7 @@ router.get('/api/distributors/cuisine/:cuisine', distributorController.findByCui
 router.get('/api/distributors/ingredients/:ingredients', distributorController.findByIngredient);
 
 // Find distributors by Name
-router.get('/api/distributors/name/:distributor_name', ensureLoggedIn(), distributorController.findByName);
+router.get('/api/distributors/name/:name', distributorController.findByName);
 
 
 // Create new ingredients
