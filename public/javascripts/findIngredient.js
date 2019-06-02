@@ -1,17 +1,21 @@
 var request = new XMLHttpRequest()
-
 var foodArray = [];
 
-request.open('GET', 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients=chicken', false)
+// accesses the API to retrieve the data.
+// Default values set by Kevin
+// number = 10
+// -- being the number of results we want to find
+request.open('GET', 'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=10&ranking=1&ignorePantry=false&ingredients='+getQueryParameters(), false)
 request.setRequestHeader("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com");
 request.setRequestHeader("X-RapidAPI-Key", "ab90f6be77msh0447acdc77eb420p18e99ejsndcb18549f8bb");
 request.onload = function () {
+
     // Begin accessing JSON data here
     var data = JSON.parse(this.response)
 
     if (request.status >= 200 && request.status < 400) {
-        var temparray = []
-        var tempaddresses = []
+
+        // For each item add it to the array
         data.forEach(distributor => {
 
             foodArray.push(distributor);
@@ -25,34 +29,25 @@ request.onload = function () {
 
 request.send()
 
-console.log(foodArray);
+// console.log(foodArray);
 
-// var savedPromise = getData();
-// console.log(savedPromise);
-// savedPromise.then
-// (function(returnVals) {
-//     console.log(returnVals);
-// })
-// console.log(savedPromise);
+// Function that retrieves the input from the HTML and passes it on to the api to retrieve desired input.
+function getQueryParameters() {
+    var query = window.location.href.split('?')[1];
 
-// unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/findByIngredients?number=5&ranking=1&ignorePantry=false&ingredients=chicken")
-//     .header("X-RapidAPI-Host", "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com")
-//     .header("X-RapidAPI-Key", "ab90f6be77msh0447acdc77eb420p18e99ejsndcb18549f8bb")
-//     .end(function (result) {
-//         // var food = JSON.parse(result.body);
-//         var foods = result.body;
-//         var foodData = [];
-//
-//         for (var i = 0; i < foods.length; i++) {
-//             var food = foods[i];
-//             // console.log(food);
-//             foodData.push(food);
-//         }
-//         console.log(foodData);
-//
-//         // console.log(result.status, result.headers, result.body);
-//     });
+    //query won't be set if ? isn't in the URL
+    if(!query) {
+        return { };
+    }
 
+    var params = query.split('&');
+
+    for(var i = 0, len = params.length; i < len; i++) {
+        var pair = params[i].split('=');
+    }
+
+    return pair[1];
+}
 
 // creates a div into the html for each item in the food elements retrieved
 function foodTemplate(food) {
@@ -64,9 +59,10 @@ function foodTemplate(food) {
     </div>
     `;
 }
+
 // retrieves the elements from the API and maps with foodTemplate function
 document.getElementById("testapp").innerHTML = `
-<h1 class="app-title">Recipes (${foodArray.length} results)</h1>
+<h1 class="app-title">${foodArray.length} RECIPES FOUND</h1>
 ${foodArray.map(foodTemplate).join("")}
-<p class="footer">These ${foodArray.length} food were added recently. Check back soon for updates.</p>
+<p class="footer">These ${foodArray.length} recipes are the most popular. Check back soon for new recipes.</p>
 `;

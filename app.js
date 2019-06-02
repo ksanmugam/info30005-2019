@@ -64,6 +64,6 @@ passport.use(new LocalStrategy(
 var routes = require('./routes/routes.js');
 app.use('/', routes);
 
-app.listen(PORT, function(req, res) {
+app.listen(PORT, function() {
     console.log(`Express listening on port ${PORT}`);
 });

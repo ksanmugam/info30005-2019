@@ -20,14 +20,15 @@ input[type=submit] {
 div {
     padding: 20px;
     border-radius: 5px;
-    background-color: #f2f2f2;
+    background-color: rgba(242, 242, 242, 0);
+
 }
 
 h1 {
     font-size: 80px;
-    font-family: "Courier New", serif;
+    font-family: "Adobe Garamond Pro", serif;
     color: black;
-    background-color: #F9E4B7;
+    background-color: rgba(249, 228, 183, 0);
     text-align: center;
 }
 
@@ -45,4 +46,18 @@ h1 {
     border-radius:100px;
     text-align:center;
     box-shadow: 2px 2px 3px #999;
+}
+
+
+.center {
+     text-align: center;
+ }
+body {
+    background-image: url("/../images/food.png");
+    /*background-size: cover;*/
+    /*background-color: #cc003a;*/
+    /*background-position: center center;*/
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: repeat;
 }
