@@ -7,21 +7,19 @@ var controller = require('../controllers/userController.js');
 var distributorController = require('../controllers/distributorController.js');
 var ingredientsController = require('../controllers/ingredientsController.js');
 
-// Login
-router.post('/login', passport.authenticate('local', {failureRedirect: '/failure'}), (req, res) => {
-                                                           //console.log(req.user);
-                                                           req.session.user = req.user;
-                                                           //console.log(req.session.user);
-                                                           res.render('tempProfile.html');
-                                                       }
+//Login
+router.post('/login', passport.authenticate('local', { successRedirect: '/tempProfile.html',
+    failureRedirect: '/failure'})
 );
 
+//Logout and delete cookies
 router.get('/logout', function(req, res){
     res.clearCookie('connect.sid', {path: '/'});
     req.logOut();
     res.redirect('/');
 });
 
+//Get current logged in user
 router.get('/getUser', function(req, res){
     var user = req.user.name;
     res.send(user);
@@ -62,7 +60,7 @@ router.get('/api/distributors/ingredients/:ingredients', distributorController.f
 router.get('/api/distributors/name/:name', distributorController.findByName);
 
 // Remove distributor
-router.delete('/distributors', distributorController.removeDistributor);
+router.delete('/distributors/id/:id', distributorController.removeDistributor);
 
 // Create new ingredients
 router.post('/api/ingredients', ingredientsController.createIngredient);
@@ -73,16 +71,18 @@ router.get('/api/ingredients', ingredientsController.findAllIngredients);
 // Find Ingredients by cuisine
 router.get('/api/ingredients/cuisine/:cuisine', ingredientsController.findByCuisine);
 
+//Login
 router.get('/users/login', (req, res) => res.send('Login'));
 
+//Register
 router.get('/users/register', (req, res) => res.send('Register'));
-
 
 
 module.exports = router;
 
 
 
+//Middleware to ensure authentication
 function ensureLoggedIn() {
     return function(req, res, next) {
         // isAuthenticated is set by `deserializeUser()`
@@ -94,10 +94,3 @@ function ensureLoggedIn() {
     }
 }
 
-// function getUser() {
-//     return function(req, res, next) {
-//         res.locals.user = req.user.name;
-//         console.log(res.locals.user);
-//         next();
-//     }
-// }

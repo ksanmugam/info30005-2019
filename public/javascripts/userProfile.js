@@ -1,14 +1,16 @@
 var requestOne = new XMLHttpRequest()
 var request = new XMLHttpRequest()
+var requestTwo = new XMLHttpRequest()
 var posts = [];
+var post_IDs = [];
 var currUser = "";
 
 
 
 getUser();
 
-console.log(currUser);
 
+//Gets all the posts of the current user and the IDs of each
 request.open('GET', '/api/distributors/name/' + currUser, false)
 request.onload = function () {
     // Begin accessing JSON data here
@@ -17,6 +19,7 @@ request.onload = function () {
 
     if (request.status >= 200 && request.status < 400) {
         var temparray = []
+        var temp_IDs = []
         data.forEach(distributor => {
                 temparray.push([
                     '<h1>' + distributor.food_name.toString() + '</h1>' +
@@ -31,6 +34,8 @@ request.onload = function () {
                     '<h2>' + distributor.price + '</h2>' +
                     '</div>' +
                     '</div>'])
+
+                temp_IDs.push(distributor._id);
         })
     } else {
         console.log('error')
@@ -38,11 +43,13 @@ request.onload = function () {
 
     posts = [...temparray];
     console.log(temparray);
+    post_IDs = [...temp_IDs];
+    console.log(temp_IDs);
 }
 
 request.send()
 
-
+//Gets current user
 function getUser() {
     requestOne.open('GET', '/getUser', false)
     requestOne.onload = function () {
@@ -52,21 +59,16 @@ function getUser() {
     requestOne.send();
 }
 
+//Deletes one distributor listing of current user
+function deleteOldestPost() {
+    requestTwo.open('DELETE', '/distributors/id/' + post_IDs.pop().toString(), false)
+    requestOne.onload = function () {
+    }
+    requestTwo.send();
+}
 
 
 
-//
-//
-// function foodTemplate(food) {
-//     return `
-//     <div class="food">
-//     <img class="food-photo" src="${food.image}">
-//     <h2 class="food-name">${food.title}</h2>
-//     <h4 class="food-likes">${food.likes} liked this dish</h4>
-//     </div>
-//     `;
-// }
-// // retrieves the elements from the API and maps with foodTemplate function
 document.getElementById("post").innerHTML = posts[0];
 
 document.getElementById("post").innerHTML = `

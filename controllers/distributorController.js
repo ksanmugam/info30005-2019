@@ -93,17 +93,18 @@ var findByIngredient = function(req, res) {
 //returns all distributors with a specific name
 var findByName = function(req, res) {
 	var currName = req.params.name;
-	Distributor.find({name:currName}, function(err,distributors){
-		if(!err){
+	Distributor.find({name: currName}, function (err, distributors) {
+		if (!err) {
 			res.send(distributors);
 		} else {
 			res.sendStatus(500);
 		}
 	});
+};
 
 var removeDistributor = function(req, res) {
-	var nameToRemove = req.params.name;
-	Distributor.deleteOne({name: nameToRemove});
+	var postToRemove = req.params.id;
+	Distributor.deleteOne({id: postToRemove});
 };
 
 
